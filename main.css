@@ -1,5 +1,6 @@
 body {
     font-family: helvetica;
+    color: white;
 }
 /*ul -> selector*/
 ul {
@@ -7,6 +8,7 @@ ul {
     /*font-family -> property name*/
     /*monospace -> value*/
     font-family: monospace;
+    color: white;
 }
 
 li {
