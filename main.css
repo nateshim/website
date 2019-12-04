@@ -1,0 +1,24 @@
+body {
+    font-family: helvetica;
+}
+/*ul -> selector*/
+ul {
+    /*font-family:monospace -> declaration*/
+    /*font-family -> property name*/
+    /*monospace -> value*/
+    font-family: monospace;
+}
+
+li {
+    list-style: circle;
+}
+
+.list {
+    list-style: square;
+}
+
+#date {
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
