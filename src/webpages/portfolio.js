@@ -8,10 +8,18 @@ function Portfolio() {
         <div className="Portfolio">
             <header className="Portfolio-header">
                 <Container>
-                    <Typography>PORTFOLIO</Typography>
+                    <Typography style={
+                    {
+                        textAlign: "center", 
+                        fontFamily: "monospace",
+                        fontSize: 60,
+                    }}
+                    >
+                        Portfolio
+                    </Typography>
                 </Container>
                 <Box>
-                    <Typography>This is where I will hold all of my projects</Typography>
+                    
                 </Box>
                 </header>
         </div>
