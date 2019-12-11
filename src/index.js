@@ -1,13 +1,13 @@
 import './css/index.css';
-import About from './webpages/About';
-import Music from './webpages/music';
-import Portfolio from './webpages/portfolio';
+import About from './About';
+import Music from './music';
+import Portfolio from './portfolio';
 import * as serviceWorker from './serviceWorker';
 import Navigation from './navigation';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import App1 from './app1';
 
 
 class Home extends Component {
@@ -25,10 +25,13 @@ class Home extends Component {
         {/* Router component can have only 1 child. We'll use a simple
           div element for this example. */}
         <div>
-          <Navigation/>
-          <Route exact path="/" component={About} />
-          <Route path="/music" component={Music} />
-          <Route path="/portfolio" component={Portfolio}/>
+          <Navigation></Navigation>
+          <Switch>
+            <Route exact path="/" component={About} />
+            <Route path="/music" component={Music} />
+            <Route path="/portfolio" component={Portfolio}/>
+            <Route path="/app1" component={App1}/>
+          </Switch>
         </div>
       </Router>
     );
