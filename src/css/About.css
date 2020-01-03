@@ -5,25 +5,20 @@
 
 
 .About-header {
-  background-color: rgb(95, 95, 95);
-  min-height: 100vh;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
+
 }
 
 .About-main {
   align-items:center;
-  width: 500px;
-  height: 500px;
-}
-.Background {
-  background-size: 300px 100px;
 }
 .Contact {
-  background-color: #000000;
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,12 +26,15 @@
   margin: 0;
   text-align: left;
 }
-
+.Background {
+  background-color: moccasin;
+}
 
 .MuiAvatar-root {
-  margin: 100px;
-  width: 380px;
+  margin: 220px;
+  width: 450px;
   height:380px;
+  text-align: center;
 }
 
 .About-link {

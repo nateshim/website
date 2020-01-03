@@ -1,38 +1,107 @@
 import React, { Component } from 'react';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import './css/navigation.css';
+import AppBar from '@material-ui/core/AppBar';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
+import { Toolbar, Icon } from '@material-ui/core';
+import Collapse from '@material-ui/core/Collapse';
+import Grid from '@material-ui/core/Grid';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Typography from '@material-ui/core/Typography';
+import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
+import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+import SkipNextIcon from '@material-ui/icons/SkipNext';
 
-class Navigation extends  Component {
-    render() {
-        return (
-            <div className ="Navigation">
-            <ul className = "Navigation-ul">
-                <List style={{margin: '12px', display: 'flex', textAlign: 'center'}}>
-                    <ListItem style={{fontSize: '1.6rem', textDecoration: 'none'}}
-                        button
-                        className="navigationbutton"
-                    >
-                        <Link to="/">About</Link>
-                        </ListItem>
-                    <ListItem style={{fontSize: '1.6rem'}}
-                        button
-                        className="navigationbutton"
-                    >
-                        <Link to="/music">Music</Link></ListItem>
-                    <ListItem style={{fontSize: '1.6rem'}}
-                        button
-                        className="navigationbutton"
-                    >
-                        <Link to="/portfolio">Portfolio</Link></ListItem>
-                </List>
-            </ul>
-            </div>
-        )
+
+
+const useStyles = makeStyles(theme => ({
+    root: {
+        flexGrow: 1,
+
+    },
+    menuButton: {
+        marginRight: 'auto',
+    },
+    title: {
+        flexGrow: 1,
+    },
+    card: {
+        margin: theme.spacing(1),
+        padding: 160,
+        display: 'inline-block',
+    },
+    container: {
+        textAlign: "center",
+    },
+}));
+export default function Navigation() {
+    const classes = useStyles();
+    const theme = useTheme();
+    const [anchorEl, setAnchorEl] = React.useState(null);
+
+    const [checked, setChecked] = React.useState(false);
+
+    const handleChange = () => {
+        setChecked(prev => !prev);
     };
+
+
+    return (
+            <div className ={classes.root}>
+                <AppBar position="static" color = 'inherit'>
+                    <Toolbar>
+                            <IconButton
+                                edge="start"
+                                className={classes.menuButton}
+                                aria-label="menu"
+                                aria-haspopup="true"
+                                onClick={handleChange}
+                                color="inherit"
+                            >
+                                <MenuIcon/>
+                            </IconButton>
+                    </Toolbar>
+                    <div className={classes.container}>
+                        <Collapse in={checked}>
+                            <Grid>
+                                <Card button elevation = {3} className = {classes.card}>
+                                    <div className={classes.musicDetails}>
+                                        <CardContent className={classes.musicContent}>
+                                            <Typography component="h5" variant="h5">
+                                                Music
+                                            </Typography>
+                                        </CardContent>
+                                        <div className={classes.musicgif}>
+                                            
+                                        </div>
+                                    </div>
+                                    <CardMedia
+                                        className={classes.cover}
+                                        image="/static/2.jpg"
+                                        title="Music picture"
+                                    />
+                                </Card>
+                                <Card button elevation = {3} className = {classes.card}>
+                                    <div className={classes.portfolioDetails}>
+                                        <CardContent className={classes.portfolioContent}>
+                                            <Typography component="h5" variant="h5">
+                                                Portfolio
+                                            </Typography>
+                                        </CardContent>
+                                        <div className={classes.portfoliogif}>
+
+                                        </div>
+                                    </div>
+                                </Card>
+                            </Grid>
+                        </Collapse>
+                    </div>
+                </AppBar>
+            </div>
+    );
 }
   
 
   
-export default (Navigation);
