@@ -21,16 +21,10 @@ class Home extends Component {
   render() {
     return (
       <Router>
-
-        {/* Router component can have only 1 child. We'll use a simple
-          div element for this example. */}
         <div>
           <Navigation></Navigation>
           <Switch>
             <Route exact path="/" component={About} />
-            <Route path="/music" component={Music} />
-            <Route path="/portfolio" component={Portfolio}/>
-            <Route path="/app1" component={App1}/>
           </Switch>
         </div>
       </Router>
