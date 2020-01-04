@@ -205,7 +205,7 @@ function About() {
                 top: 0,
                 left: 0,
                 height: 400,
-                width: 400,
+                width: 399,
               }}
               src={'https://www.youtube.com/embed/vjcyYA4IHZQ'}
               frameBorder="0"
