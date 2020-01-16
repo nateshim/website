@@ -13,6 +13,7 @@ import Typography from '@material-ui/core/Typography';
 import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
 import PlayArrowIcon from '@material-ui/icons/PlayArrow';
 import SkipNextIcon from '@material-ui/icons/SkipNext';
+import {Link} from 'react-router-dom';
 
 
 
@@ -70,7 +71,8 @@ export default function Navigation() {
                                     <div className={classes.musicDetails}>
                                         <CardContent className={classes.musicContent}>
                                             <Typography component="h5" variant="h5">
-                                                Music
+                                            <Link to="/countdowntimer">CountdownTimer</Link>
+
                                             </Typography>
                                         </CardContent>
                                         <div className={classes.musicgif}>

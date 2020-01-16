@@ -1,13 +1,11 @@
 import './css/index.css';
 import About from './About';
-import Music from './music';
-import Portfolio from './portfolio';
 import * as serviceWorker from './serviceWorker';
 import Navigation from './navigation';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import App1 from './app1';
+import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
+import CountdownTimer from './apps/countdowntimer/Countdowntimer';
 
 
 class Home extends Component {
@@ -22,9 +20,9 @@ class Home extends Component {
     return (
       <Router>
         <div>
-          <Navigation></Navigation>
           <Switch>
             <Route exact path="/" component={About} />
+            <Route path="/countdowntimer" component={CountdownTimer}/>
           </Switch>
         </div>
       </Router>

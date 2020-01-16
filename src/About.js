@@ -17,6 +17,9 @@ import MusicNoteIcon from '@material-ui/icons/MusicNote';
 import WebIcon from '@material-ui/icons/Web';
 import GamesIcon from '@material-ui/icons/Games';
 import PersonIcon from '@material-ui/icons/Person';
+import {Link} from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import countdowngif from './static/countdown_gif.gif';
 
 const useStyles = makeStyles({
   title: {
@@ -39,16 +42,51 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
+  app: {
+    height: 450,
+    width: 580,
+    background: '#FFF',
+    transition: 'width',
+    position: 'initial',
+    transitionDuration: '.5s',
+    transitionProperty: 'initial',
+    '&:hover': {
+      background: '#BBB',
+      width: 595,
+      height: 465,
+    }
+  },
+  game: {
+    height: 465,
+    width: 380,
+    background: '#FFF',
+    transition: 'width',
+    position: 'initial',
+    transitionDuration: '.5s',
+    transitionProperty: 'initial',
+    '&:hover': {
+      background: '#BBB',
+      height: 575,
+    }
+  },
   card: {
-    maxHeight: 450,
-    minHeight: 450,
-    maxWidth: 300,
-    minWidth: 300,
+    height: 450,
+    width: 300,
+    background: '#FFF',
+    transition: 'width',
+    position: 'initial',
+    transitionDuration: '.5s',
+    transitionProperty: 'initial',
+    '&:hover': {
+      background: '#BBB',
+      width: 315,
+      height: 465
+    }
   },
   grid: {
     margin: '0px',
     padding: '0px',
-    display: 'inline-block',
+    justifyContent: 'center',
     color: '#6495ED',
     backgroundColor: '#6495ED',
 
@@ -56,13 +94,16 @@ const useStyles = makeStyles({
   cardContent: {
     fontFamily: 'monospace',
   },
+  popover: {
+    pointerEvents: 'none',
+  },
 });
 function About() {
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   return (
     <div className="About"> 
-        <Parallax blur={0} strength={2000} bgImage={background}style={{position: 'absolute'}}>
+        <Parallax blur={0} strength={5000} bgImage={background}style={{position: 'absolute'}}>
             <div style={{height: 20,width:1440}}/>
             <Typography className={classes.title}>
               Nathanael Shim 
@@ -176,62 +217,80 @@ function About() {
         <div style={{height:100, backgroundColor:'#6495ED'}}></div>
         <Grid container spacing={3} style={{justifyContent:'center'}}>
           <Grid item>
-            <iframe
-              style={{
-                top: 0,
-                left: 0,
-                height: 400,
-                width: 400,
-              }}
-              src={'https://www.youtube.com/embed/B0NLyBeYxwg'}
-              frameBorder="0"
-            />
+          <iframe width="500" height="175" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/673985105&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>          
           </Grid>
           <Grid item>
-            <iframe
-              style={{
-                top: 0,
-                left: 0,
-                height: 400,
-                width: 400,
-              }}
-              src={'https://www.youtube.com/embed/pceH-KGZT8k'}
-              frameBorder="0"
-            />
+            <iframe width="500" height="175" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/475294164&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>          
           </Grid>
           <Grid item>
-            <iframe
-              style={{
-                top: 0,
-                left: 0,
-                height: 400,
-                width: 399,
-              }}
-              src={'https://www.youtube.com/embed/vjcyYA4IHZQ'}
-              frameBorder="0"
-            />
+            <iframe width="500" height="175" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/733610278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
           </Grid>
-        </Grid>
+          <Grid item>
+          <iframe width="500" height="175" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200983491&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+          </Grid>
+          </Grid>
       </Grid>
-      <Grid style={{backgroundColor: '#6495ED'}}>
-        <Typography style={{fontFamily: 'monospace'}} variant='h4'>
+      <div style={{height:100, backgroundColor:'#6495ED'}}/>
+      <Typography style={{fontFamily: 'monospace', backgroundColor: '#6495ED'}} variant='h4'>
           My Projects
         </Typography>
+      <Grid container style={{backgroundColor: '#6495ED'}} item spacing={5} className={classes.grid}>
+        <Grid item>
+          <Card m={500}className={classes.app} variant="outlined" square gutterBottom>
+            <CardContent>
+              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
+                Countdown Timer
+              </Typography>
+              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
+                <Link target="_blank" to="/countdowntimer"><img style={{width:'100%', height: '200%'}}src={countdowngif} alt="loading..."/></Link>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
-      <Grid style={{backgroundColor: '#6495ED'}}>
-        <Typography style={{fontFamily: 'monospace'}} variant='h4'>
+        <Typography style={{fontFamily: 'monospace', backgroundColor: '#6495ED'}} variant='h4'>
           My Games
         </Typography>
+        <Grid container style={{backgroundColor: '#6495ED'}} item spacing={5} className={classes.grid}>
+        <Grid item>
+          <Card m={500}className={classes.game} variant="outlined" square gutterBottom>
+            <CardContent>
+              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
+                Chess
+              </Typography>
+              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
+                <div class={"play-chess-GIF-on-hover"}/>
+                <AwesomeButtonSocial target="_blank" size = "lrg"type ="github"theme="blue" href="https://github.com/nateshim/chess">Source Code</AwesomeButtonSocial>
+                <div style={{height: 25}}/>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
+        <Grid item>
+          <Card m={500}className={classes.game} variant="outlined" square gutterBottom>
+            <CardContent>
+              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
+                Hangman
+              </Typography>
+              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
+                <div class={"play-hangman-GIF-on-hover"}/>
+                <AwesomeButtonSocial target="_blank" size = "lrg"type ="github"theme="blue" href="https://github.com/nateshim/small_python_apps/tree/master/hangman">Source Code</AwesomeButtonSocial>
+                <div style={{height: 25}}/>
+              </Typography>
+            </CardContent>
+          </Card>
+        </Grid>
       </Grid>
+      <div style={{height: 100, backgroundColor: '#6495ED'}}/>
         <Grid container spacing={3}  className={classes.grid}>
           <Grid item className={classes.grid}>
-            <AwesomeButtonSocial size = "medium"type ="secondary"theme="blue" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrfTKHdsjVSZvSNvqTgKmrfrdBjXkcbpbdhlrMvKmTzlKsVJsVHfjNjKVbMrrlfsmDRHRg"><img src="https://img.icons8.com/color/30/000000/google-logo.png"/>Gmail</AwesomeButtonSocial>
+            <AwesomeButtonSocial size = "medium"type ="secondary"theme="blue" target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrfTKHdsjVSZvSNvqTgKmrfrdBjXkcbpbdhlrMvKmTzlKsVJsVHfjNjKVbMrrlfsmDRHRg"><img src="https://img.icons8.com/color/30/000000/google-logo.png"/>Gmail</AwesomeButtonSocial>
           </Grid>
           <Grid item className={classes.grid}>
             <AwesomeButtonSocial type="github" size="medium" target = "_blank" href = "https://github.com/nateshim">Github</AwesomeButtonSocial>
           </Grid>
           <Grid item className={classes.grid}>
-            <AwesomeButtonSocial type="linkedin" href = "https://www.linkedin.com/in/nathanael-shim-324b55115/">LinkedIn</AwesomeButtonSocial>
+            <AwesomeButtonSocial type="linkedin" target="_blank" href = "https://www.linkedin.com/in/nathanael-shim-324b55115/">LinkedIn</AwesomeButtonSocial>
           </Grid>
           <Grid item className={classes.grid}>
             <AwesomeButtonSocial type="youtube" target="_blank" href="https://www.youtube.com/channel/UC_foFRkUQR43k31HQ_5j-1g">Youtube</AwesomeButtonSocial>
