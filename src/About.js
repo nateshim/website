@@ -209,7 +209,7 @@ function About() {
           </Card>
           </Grid>
           </Grid>
-      <div style={{height: 200, backgroundColor: '#6495ED'}}></div>
+      <div style={{height: 100, backgroundColor: '#6495ED'}}></div>
       <Grid style={{backgroundColor: '#6495ED'}}>
         <Typography style={{fontFamily: 'monospace'}} variant='h4'>
           Recent Music
@@ -248,6 +248,8 @@ function About() {
           </Card>
         </Grid>
       </Grid>
+      <div style={{height: 100, backgroundColor: '#6495ED'}}></div>
+
         <Typography style={{fontFamily: 'monospace', backgroundColor: '#6495ED'}} variant='h4'>
           My Games
         </Typography>
