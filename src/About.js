@@ -19,7 +19,7 @@ import GamesIcon from '@material-ui/icons/Games';
 import PersonIcon from '@material-ui/icons/Person';
 import {Link} from 'react-router-dom';
 import Button from '@material-ui/core/Button';
-import countdowngif from './static/countdown_gif.gif';
+import countdown from './static/countdown.png';
 
 const useStyles = makeStyles({
   title: {
@@ -242,7 +242,7 @@ function About() {
                 Countdown Timer
               </Typography>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                <Link target="_blank" to="/countdowntimer"><img style={{width:'100%', height: '200%'}}src={countdowngif} alt="loading..."/></Link>
+                <Link target="_blank" to="/countdowntimer"><img style={{width:'100%', height: '150%'}}src={countdown} alt="loading..."/></Link>
               </Typography>
             </CardContent>
           </Card>

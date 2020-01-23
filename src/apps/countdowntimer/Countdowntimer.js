@@ -1,6 +1,5 @@
 import React from 'react';
 import './css/App.css';
-import background from './gnight.gif';
 import Timer from './Timer';
 import TimerInput from './TimerInput';
 import StartButton from './StartButton';
@@ -58,35 +57,31 @@ class CountdownTimer extends React.Component{
         var sec = this.secondsRemaining - (min*60) - (hr*3600);
       } else {
         var hr = '00';
+        if (hr < 10 && hr > 0) {
+          hr = "0" + hr
+        }
         var min = Math.floor(this.secondsRemaining/60);
+        if (min < 10) {
+          min = "0" + min
+        }
         var sec = this.secondsRemaining - (min*60);
+        if (sec < 10) {
+          sec = "0" + sec
+        }
       }
-
       this.setState({
         hours: hr,
         minutes: min,
         seconds: sec,
       })
-        if (hr < 10 && hr > 0) {
+      this.secondsRemaining--
+      if (min =='00' && sec == '00' && hr == '00') {
           this.setState({
-            hours: "0" + this.state.hours,
+            seconds: sec
           })
-        }
-        if (sec < 10) {
-          this.setState({
-            seconds: "0" + sec,
-          })
-        }
-        if (min < 10) {
-          this.setState({
-            minutes: "0" + min,
-          })
-        }
-        if (min =='00' & sec == '00' && hr == '00') {
           clearInterval(this.intervalHandle);
           this.playAudio();
-        }
-        this.secondsRemaining--
+      }
     }
   }
 
@@ -121,7 +116,7 @@ class CountdownTimer extends React.Component{
   render() {
     return (
       <div>
-        <Parallax strength={200} bgImage={background} style={{height: 1000, position: 'relative'}}>
+        <Parallax strength={200}  style={{height: 1000, position: 'relative'}}>
         <TimerInput hours={this.state.hours} minutes={this.state.minutes} handleMinuteChange={this.handleMinuteChange} handleHourChange={this.handleHourChange}/>
         <div style={{height: 100}}/>
         <Timer hours={this.state.hours} minutes={this.state.minutes} seconds = {this.state.seconds}/>
