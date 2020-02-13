@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
 import App from './apps/countdowntimer/Countdowntimer';
+import Parallax from 'react-parallax';
 
 
 class Home extends Component {

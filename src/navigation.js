@@ -23,14 +23,17 @@ const useStyles = makeStyles(theme => ({
 
     },
     menuButton: {
-        marginRight: 'auto',
     },
     title: {
-        flexGrow: 1,
-    },
+        color:"white", 
+        textAlign:"center",
+        fontSize:50,
+        fontFamily: 'Courier New',
+        margin: 10,
+      },
     card: {
         margin: theme.spacing(1),
-        padding: 160,
+        padding: 90,
         display: 'inline-block',
     },
     container: {
@@ -51,7 +54,7 @@ export default function Navigation() {
 
     return (
             <div className ={classes.root}>
-                <AppBar position="static" color = 'inherit'>
+                <AppBar position="static" style={{background: 'transparent', boxShadow:'none'}}>
                     <Toolbar>
                             <IconButton
                                 edge="start"
@@ -63,6 +66,7 @@ export default function Navigation() {
                             >
                                 <MenuIcon/>
                             </IconButton>
+                            <Typography className={classes.title}>nateshim</Typography>
                     </Toolbar>
                     <div className={classes.container}>
                         <Collapse in={checked}>
