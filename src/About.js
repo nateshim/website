@@ -179,7 +179,7 @@ function About() {
           <Card m={500}class='app' style={{variant:"outlined", borderRadius:32}} square gutterBottom>
             <CardContent>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                Countdown Timer
+                IKaraoke
               </Typography>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
                 <a target="_blank" href="https://nateshim.github.io/karaokeapp/"><img style={{width:'100%', height: '150%'}}src={ikaraoke} alt="loading..."/></a>
