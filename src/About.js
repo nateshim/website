@@ -14,7 +14,7 @@ import WebIcon from '@material-ui/icons/Web';
 import GamesIcon from '@material-ui/icons/Games';
 import PersonIcon from '@material-ui/icons/Person';
 import {Link} from 'react-router-dom';
-import countdown from './static/countdown.png';
+import ikaraoke from './static/ikaraoke.png';
 import cs101 from './static/cs101.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -35,20 +35,6 @@ const useStyles = makeStyles({
     margin: '0 2px',
     transform: 'scale(0.8)',
   },
-  app: {
-    height: 450,
-    width: 580,
-    background: '#BBB',
-    transition: 'width',
-    position: 'initial',
-    transitionDuration: '.5s',
-    transitionProperty: 'initial',
-    '&:hover': {
-      background: '#BBB',
-      width: 595,
-      height: 465,
-    }
-  },
   game: {
     height: 465,
     width: 380,
@@ -68,13 +54,6 @@ const useStyles = makeStyles({
     variant: 'outlined',
     borderRadius: 32,
     backgroundColor: 'gray',
-    //transition: 'width',
-    //transitionDuration: '.5s',
-    //transitionProperty: 'initial',
-    //'&:hover': {
-      //width: 815,
-      //height: 255
-    //}
   },
   soundcloudcard: {
     height: 422,
@@ -107,9 +86,9 @@ function About() {
             <div data-aos="fade-right" data-aos-delay = '300' data-aos-duration = '800' className={classes.title}>
               nateshim 
             </div>
-          <div style={{height:700}}></div>
+          <div style={{height:500}}></div>
             <Grid container style={{justifyContent: 'center'}}>
-            <Grid item data-aos="fade-left" data-aos-duration='800' spacing={5}className={classes.grid}>
+            <Grid item data-aos="fade-left" data-aos-delay = '100' data-aos-duration='800' spacing={5}className={classes.grid}>
               <Card m={500} class="Card" style={{variant:"outlined" , borderRadius:32}} gutterBottom>
                 <CardContent>
                   <PersonIcon style={{fontSize: '45px', color: '#ffffff'}}/>
@@ -123,7 +102,7 @@ function About() {
                     {bull} UC Berkeley Class of 2019.
                   </Typography>
                   <Typography className={classes.cardContent}  variant="h5" component="h2">
-                    {bull} Developer, musician, and video game enthusiast.
+                    {bull} Frontend focused developer and music producer.
                   </Typography>
                 </CardContent>
               </Card>
@@ -131,7 +110,7 @@ function About() {
             </Grid>
             <div style={{height: 80}}></div>
             <Grid container style={{justifyContent: 'center'}}>
-            <Grid item data-aos="fade-right" data-aos-duration="800" spacing={5}className={classes.grid}>
+            <Grid item data-aos="fade-right" data-aos-delay = '100' data-aos-duration="800" spacing={5}className={classes.grid}>
               <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}} gutterBottom>
                 <CardContent>
                   <MusicNoteIcon style={{fontSize: '45px', color: '#ffffff'}}/>
@@ -139,13 +118,13 @@ function About() {
                     <u>Music</u>
                   </Typography>
                   <Typography className={classes.cardContent}variant="h5" component="h2" gutterBottom>
-                    {bull} Uses primarily Ableton Live to produce music
+                    {bull} I primarily use Ableton Live to produce music
                   </Typography>
                   <Typography className={classes.cardContent}  variant="h5" component="h2" gutterBottom>
                     {bull} Proficient in piano, guitar, bass, and drums
                   </Typography>
                   <Typography className={classes.cardContent}  variant="h5" component="h2" gutterBottom>
-                    {bull} Current artists on repeat: D'Angelo, Lauryn Hill, Drake
+                    {bull} Current artists I'm listening to: D'Angelo, Lauryn Hill, Drake
                   </Typography>
                 </CardContent>
               </Card>
@@ -153,7 +132,7 @@ function About() {
             </Grid>
             <div style={{height: 80}}></div>
             <Grid container style={{justifyContent: 'center'}}>
-            <Grid item data-aos="fade-left" data-aos-duration="800" spacing={5} className={classes.grid}>
+            <Grid item data-aos="fade-left" data-aos-delay = '100' data-aos-duration="800" spacing={5} className={classes.grid}>
               <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}} gutterBottom>
                 <CardContent>
                   <WebIcon style={{fontSize: '45px', color: '#ffffff'}}/>
@@ -168,25 +147,6 @@ function About() {
                   </Typography>
                   <Typography className={classes.cardContent} variant="h5" component="h2" gutterBottom>
                     {bull} Frontend: Most proficient with JS, React, HTML and CSS
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            </Grid>
-            <div style={{height: 80}}></div>
-            <Grid container style={{justifyContent: 'center'}}>
-            <Grid item data-aos="fade-right" data-aos-duration="800" spacing={5} className={classes.grid}>
-              <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}} gutterBottom>
-                <CardContent>
-                  <GamesIcon style={{fontSize: '45px', color: '#ffffff'}}/>
-                  <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                    <u>Game Design</u>
-                  </Typography>
-                  <Typography className={classes.cardContent} variant="h5" component="h2"gutterBottom>
-                    {bull} I enjoy making games as much as I enjoy playing them.
-                  </Typography>
-                  <Typography className={classes.cardContent} variant="h5" component="h2"gutterBottom>
-                    {bull} I primarily use Pygames, Unity, and RPG Maker.
                   </Typography>
                 </CardContent>
               </Card>
@@ -211,18 +171,18 @@ function About() {
         </Grid>
         <div style={{height:100}}/>
       <Typography style={{fontFamily: 'monospace', backgroundColor: '#transparent', color: 'white'}} variant='h4'>
-          Projects
+          Portfolio
         </Typography>
       <div style={{height:100, backgroundColor:'#transparent'}}></div>
-      <Grid container data-aos="fade-right" style={{backgroundColor: '#transparent', justifyContent:'center'}} item spacing={5}>
+      <Grid container data-aos="fade-right" style={{justifyContent:'center'}} item spacing={5}>
         <Grid item className={classes.grid}>
-          <Card m={500}className={classes.app} variant="outlined" square gutterBottom>
+          <Card m={500}class='app' style={{variant:"outlined", borderRadius:32}} square gutterBottom>
             <CardContent>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
                 Countdown Timer
               </Typography>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                <Link target="_blank" to="/countdowntimer"><img style={{width:'100%', height: '150%'}}src={countdown} alt="loading..."/></Link>
+                <a target="_blank" href="https://nateshim.github.io/karaokeapp/"><img style={{width:'100%', height: '150%'}}src={ikaraoke} alt="loading..."/></a>
               </Typography>
             </CardContent>
           </Card>
@@ -231,7 +191,7 @@ function About() {
       <div style={{height:250}}></div>
       <Grid container data-aos="fade-left" style={{backgroundColor: '#transparent', justifyContent:'center'}} item spacing={5}>
         <Grid item className={classes.grid}>
-          <Card m={500}className={classes.app} variant="outlined" square gutterBottom>
+          <Card m={500}class="app" style={{variant:"outlined", borderRadius:32}} square gutterBottom>
             <CardContent>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
                 CS101
@@ -244,42 +204,8 @@ function About() {
         </Grid>
       </Grid>
       <div style={{height: 100, backgroundColor: 'transparent'}}></div>
-        <Typography style={{fontFamily: 'monospace', backgroundColor: '#transparent', color: 'white'}} variant='h4'>
-          Games
-        </Typography>
-        <div style={{height:100, backgroundColor:'#transparent'}}></div>
-        <Grid container style={{backgroundColor: '#transparent', justifyContent:'center'}} item spacing={5}>
-        <Grid item>
-          <Card m={500}className={classes.game} variant="outlined" square gutterBottom>
-            <CardContent>
-              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                Chess
-              </Typography>
-              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                <div class={"play-chess-GIF-on-hover"}/>
-                <AwesomeButtonSocial target="_blank" size = "lrg"type ="github"theme="blue" href="https://github.com/nateshim/chess">Source Code</AwesomeButtonSocial>
-                <div style={{height: 25}}/>
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-        <Grid item>
-          <Card m={500}className={classes.game} variant="outlined" square gutterBottom>
-            <CardContent>
-              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                Hangman
-              </Typography>
-              <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                <div class={"play-hangman-GIF-on-hover"}/>
-                <AwesomeButtonSocial target="_blank" size = "lrg"type ="github"theme="blue" href="https://github.com/nateshim/small_python_apps/tree/master/hangman">Source Code</AwesomeButtonSocial>
-                <div style={{height: 25}}/>
-              </Typography>
-            </CardContent>
-          </Card>
-        </Grid>
-      </Grid>
       <div style={{height: 100, backgroundColor: '#transparent'}}/>
-        <Grid container spacing={3} style={{justifyContent: 'center'}}>
+        <Grid container spacing={3} style={{justifyContent: 'center', backgroundColor: 'black'}}>
           <Grid item>
             <AwesomeButtonSocial size = "medium"type ="secondary"theme="blue" target="_blank" href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCHrfTKHdsjVSZvSNvqTgKmrfrdBjXkcbpbdhlrMvKmTzlKsVJsVHfjNjKVbMrrlfsmDRHRg"><img src="https://img.icons8.com/color/30/000000/google-logo.png"/>Gmail</AwesomeButtonSocial>
           </Grid>
