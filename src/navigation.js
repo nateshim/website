@@ -1,113 +1,119 @@
-import React, { Component } from 'react';
-import AppBar from '@material-ui/core/AppBar';
-import IconButton from '@material-ui/core/IconButton';
+import React from 'react';
+import clsx from 'clsx';
+import { makeStyles } from '@material-ui/core/styles';
+import Drawer from '@material-ui/core/Drawer';
+import { Link} from "react-scroll";
+import List from '@material-ui/core/List';
+import Divider from '@material-ui/core/Divider';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import InboxIcon from '@material-ui/icons/MoveToInbox';
+import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
-import { Toolbar, Icon } from '@material-ui/core';
-import Collapse from '@material-ui/core/Collapse';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import SkipPreviousIcon from '@material-ui/icons/SkipPrevious';
-import PlayArrowIcon from '@material-ui/icons/PlayArrow';
-import SkipNextIcon from '@material-ui/icons/SkipNext';
-import {Link} from 'react-router-dom';
+import PersonIcon from '@material-ui/icons/Person';
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
+import WebIcon from '@material-ui/icons/Web';
 
 
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        flexGrow: 1,
+const useStyles = makeStyles({
+  list: {
+    width: 250,
+    color: 'white',
+  },
+  fullList: {
+    width: 'auto',
+  },
+  icon: {
+    width: 65,
+    height: 65,
+    margin: 5,
+    color: 'white',
+    transition: 'color',
+    transitionDuration: '.5s',
+    "&:hover": {
+        color: 'gray'
+    }
+  },
+  
+});
 
-    },
-    menuButton: {
-    },
-    title: {
-        color:"white", 
-        textAlign:"center",
-        fontSize:50,
-        fontFamily: 'Courier New',
-        margin: 10,
-      },
-    card: {
-        margin: theme.spacing(1),
-        padding: 90,
-        display: 'inline-block',
-    },
-    container: {
-        textAlign: "center",
-    },
-}));
 export default function Navigation() {
-    const classes = useStyles();
-    const theme = useTheme();
-    const [anchorEl, setAnchorEl] = React.useState(null);
+  const classes = useStyles();
+  const [state, setState] = React.useState({
+    left: false,
+  });
 
-    const [checked, setChecked] = React.useState(false);
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
 
-    const handleChange = () => {
-        setChecked(prev => !prev);
-    };
+    setState({ ...state, [anchor]: open });
+  };
 
+  const list = (anchor) => (
+    <div
+      className={clsx(classes.list, {
+        [classes.fullList]: anchor === 'left',
+      })}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List style={{backgroundColor: 'black'}}>
+        {['About', 'Music', 'Portfolio'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>{index === 0 ? <PersonIcon style={{color: 'white'}}/> : index === 1 ? <MusicNoteIcon style={{color: 'white'}}/>: <WebIcon style={{color: 'white'}}/>}</ListItemIcon>
+            <Link 
+            activeClass="active"
+            to={text}
+            spy={true}
+            smooth={true}
+            duration={50} 
+            onClick={toggleDrawer(anchor, false)}
+            style={{font: 'monospace'}}
+            >
+            <ListItemText primary={text} />
+            </Link>
+          </ListItem>
+        ))}
+        <ListItem style={{height: 445}}></ListItem>
+      </List>
+      <Divider style={{color: 'white'}}/>
+      <List style={{backgroundColor: 'black'}}>
+        {['Contact'].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon><MailIcon style={{color: 'white'}}/></ListItemIcon>
+            <Link 
+            activeClass="active"
+            to={text}
+            spy={true}
+            smooth={true}
+            duration={50} 
+            onClick={toggleDrawer(anchor, false)}
+            style={{font: 'monospace'}}
+            >
+            <ListItemText primary={text} />
+            </Link>
+          </ListItem>
+        ))}
+        <ListItem style={{height: 96}}></ListItem>
+      </List>
+    </div>
+  );
 
-    return (
-            <div className ={classes.root}>
-                <AppBar position="static" style={{background: 'transparent', boxShadow:'none'}}>
-                    <Toolbar>
-                            <IconButton
-                                edge="start"
-                                className={classes.menuButton}
-                                aria-label="menu"
-                                aria-haspopup="true"
-                                onClick={handleChange}
-                                color="inherit"
-                            >
-                                <MenuIcon/>
-                            </IconButton>
-                            <Typography className={classes.title}>nateshim</Typography>
-                    </Toolbar>
-                    <div className={classes.container}>
-                        <Collapse in={checked}>
-                            <Grid>
-                                <Card button elevation = {3} className = {classes.card}>
-                                    <div className={classes.musicDetails}>
-                                        <CardContent className={classes.musicContent}>
-                                            <Typography component="h5" variant="h5">
-                                            <Link to="/countdowntimer">CountdownTimer</Link>
-
-                                            </Typography>
-                                        </CardContent>
-                                        <div className={classes.musicgif}>
-                                            
-                                        </div>
-                                    </div>
-                                    <CardMedia
-                                        className={classes.cover}
-                                        image="/static/2.jpg"
-                                        title="Music picture"
-                                    />
-                                </Card>
-                                <Card button elevation = {3} className = {classes.card}>
-                                    <div className={classes.portfolioDetails}>
-                                        <CardContent className={classes.portfolioContent}>
-                                            <Typography component="h5" variant="h5">
-                                                Portfolio
-                                            </Typography>
-                                        </CardContent>
-                                        <div className={classes.portfoliogif}>
-
-                                        </div>
-                                    </div>
-                                </Card>
-                            </Grid>
-                        </Collapse>
-                    </div>
-                </AppBar>
-            </div>
-    );
+  return (
+    <div>
+      {['left'].map((anchor) => (
+        <React.Fragment key={anchor}>
+          <MenuIcon className = {classes.icon} onClick={toggleDrawer(anchor, true)}>{anchor}</MenuIcon>
+          <Drawer anchor={anchor} open={state[anchor]} onClose={toggleDrawer(anchor, false)}>
+            {list(anchor)}
+          </Drawer>
+        </React.Fragment>
+      ))}
+    </div>
+  );
 }
-  
-
-  

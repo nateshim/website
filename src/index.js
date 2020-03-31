@@ -1,12 +1,10 @@
 import './css/index.css';
 import About from './About';
 import * as serviceWorker from './serviceWorker';
-import Navigation from './navigation';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
 import App from './apps/countdowntimer/Countdowntimer';
-import Parallax from 'react-parallax';
 
 
 class Home extends Component {

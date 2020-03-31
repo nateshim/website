@@ -3,6 +3,7 @@ html {
   height: 100%;
   margin: 0px;
   padding:0px;
+  scroll-behavior: smooth;
 
 }
 body {
@@ -23,17 +24,17 @@ body {
   height: 250px;
   width: 800px;
 }
-
 .app {
-  height: 450px;
-  width: 580px;
+  height: 505px;
+  width: 595px;
   background-color: rgba(128,128,128, .9);
   transition: 'width';
   position: 'initial';
+  display: inline-block;
   transition-duration: .3s;
 }
 .app:hover {
-  width:595px;
+  width:605px;
 }
 .SoundCloudCard {
   height: 422px;
