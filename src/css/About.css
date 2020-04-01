@@ -4,7 +4,7 @@ html {
   margin: 0px;
   padding:0px;
   scroll-behavior: smooth;
-
+  scroll-snap-align: center;
 }
 body {
   width: 100%;
@@ -16,29 +16,27 @@ body {
 .About {
   text-align: center;
   align-items:center;
-  height:100%;
-  width:100%;
 }
 .Card {
   background-color: rgba(128,128,128, .9);
-  height: 250px;
-  width: 800px;
+  height: 100%;
+  width: 100%;
 }
 .app {
-  height: 505px;
-  width: 595px;
+  height: 100%;
+  width: 100%;
   background-color: rgba(128,128,128, .9);
   transition: 'width';
-  position: 'initial';
-  display: inline-block;
   transition-duration: .3s;
+  position: static;
 }
 .app:hover {
-  width:605px;
+  width:100%;
 }
 .SoundCloudCard {
-  height: 422px;
-  width: 1000px;
+  height: 50%;
+  width: 80%;
+  padding: 10px;
   background-color: rgba(128,128,128, .9);
 }
 
@@ -64,40 +62,5 @@ body {
   
 }
 
-.MuiAvatar-root {
-  margin: 220px;
-  width: 450px;
-  height:380px;
-  text-align: center;
-}
-
-.About-link {
-  color: #61dafb;
-}
-
-.play-chess-GIF-on-hover {
-  width: 350px;
-  height: 450px;
-  background-repeat: no-repeat;
-  background-position: -150px 0px;
-  background-size: 650px 400px;
-  background-image: url('../static/chesspic.png');
-}
-.play-chess-GIF-on-hover:hover {
-  background-position: -155px 0px;
-  background-image: url('../static/chessgif.gif');
-}
-
-.play-hangman-GIF-on-hover {
-  width: 350px;
-  height: 450px;
-  background-repeat: no-repeat;
-  background-position: -150px 0px;
-  background-size: 650px 400px;
-  background-image: url('../static/hangmanpic.png');
-}
-.play-hangman-GIF-on-hover:hover {
-  background-image: url('../static/hangmangif.gif');
-}
 
 

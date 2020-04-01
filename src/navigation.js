@@ -24,6 +24,7 @@ const useStyles = makeStyles({
   },
   fullList: {
     width: 'auto',
+
   },
   icon: {
     width: 65,
@@ -73,9 +74,8 @@ export default function Navigation() {
             smooth={true}
             duration={50} 
             onClick={toggleDrawer(anchor, false)}
-            style={{font: 'monospace'}}
             >
-            <ListItemText primary={text} />
+            <ListItemText>{text}</ListItemText>
             </Link>
           </ListItem>
         ))}
@@ -93,9 +93,8 @@ export default function Navigation() {
             smooth={true}
             duration={50} 
             onClick={toggleDrawer(anchor, false)}
-            style={{font: 'monospace'}}
             >
-            <ListItemText primary={text} />
+            <ListItemText primary={text}/>
             </Link>
           </ListItem>
         ))}
