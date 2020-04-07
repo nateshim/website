@@ -4,7 +4,6 @@ import * as serviceWorker from './serviceWorker';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
-import App from './apps/countdowntimer/Countdowntimer';
 
 
 class Home extends Component {
@@ -21,7 +20,6 @@ class Home extends Component {
         <div>
           <Switch>
             <Route exact path="/" component={About} />
-            <Route path="/countdowntimer" component={App}/>
           </Switch>
         </div>
       </Router>

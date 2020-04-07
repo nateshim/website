@@ -8,7 +8,8 @@ import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
+import {ThemeProvider} from '@material-ui/styles';
+import theme from './theme.js';
 import MailIcon from '@material-ui/icons/Mail';
 import MenuIcon from '@material-ui/icons/Menu';
 import PersonIcon from '@material-ui/icons/Person';
@@ -17,10 +18,11 @@ import WebIcon from '@material-ui/icons/Web';
 
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
   list: {
     width: 250,
     color: 'white',
+    height: '100%',
   },
   fullList: {
     width: 'auto',
@@ -38,7 +40,7 @@ const useStyles = makeStyles({
     }
   },
   
-});
+}));
 
 export default function Navigation() {
   const classes = useStyles();
@@ -63,7 +65,8 @@ export default function Navigation() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
-      <List style={{backgroundColor: 'black'}}>
+      <ThemeProvider theme={theme}>
+      <List style={{backgroundColor: 'black', height: '89.4%'}}>
         {['About', 'Music', 'Portfolio'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>{index === 0 ? <PersonIcon style={{color: 'white'}}/> : index === 1 ? <MusicNoteIcon style={{color: 'white'}}/>: <WebIcon style={{color: 'white'}}/>}</ListItemIcon>
@@ -79,7 +82,6 @@ export default function Navigation() {
             </Link>
           </ListItem>
         ))}
-        <ListItem style={{height: 445}}></ListItem>
       </List>
       <Divider style={{color: 'white'}}/>
       <List style={{backgroundColor: 'black'}}>
@@ -98,8 +100,8 @@ export default function Navigation() {
             </Link>
           </ListItem>
         ))}
-        <ListItem style={{height: 96}}></ListItem>
       </List>
+      </ThemeProvider>
     </div>
   );
 

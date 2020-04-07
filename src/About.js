@@ -17,7 +17,7 @@ import cs101 from './static/cs101.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Navigation from './navigation';
-import { Toolbar, AppBar } from '@material-ui/core';
+import { Toolbar} from '@material-ui/core';
 
 AOS.init();
 
@@ -60,7 +60,7 @@ const useStyles = makeStyles({
     justifyContent: 'center',
   },
   row: {
-    padding: '20px',
+    padding: '10px',
   },
   popover: {
     pointerEvents: 'none',
@@ -85,28 +85,28 @@ function About() {
 
       <Grid id = "About" container className={classes.aboutGrid}>
 
-        <Grid item md zeroMinWidth data-aos="fade-left" data-aos-delay = '100' data-aos-duration='800' spacing={5}className={classes.grid}>
-          <Card m={500} class="Card" style={{variant:"outlined" , borderRadius:32}} gutterBottom>
+        <Grid item md zeroMinWidth data-aos="fade-left" data-aos-delay = '100' data-aos-duration='800'className={classes.grid}>
+          <Card m={500} class = "Card" style={{variant:"outlined" , borderRadius:32}}>
             <CardContent>
               <PersonIcon style={{fontSize: '45px', color: '#ffffff'}}/>
               <Typography className = {classes.cardContent} variant = "h4" component="h2" gutterBottom>
                 <u>Background</u>
               </Typography>
-              <Typography className={classes.cardContent}variant="h5" component="h2"gutterBottom>
+              <Typography className={classes.cardContent}variant="h5" component="h2" gutterBottom>
                 {bull} Based in the Bay Area.
               </Typography>
-              <Typography className={classes.cardContent}  variant="h5" component="h2"gutterBottom>
+              <Typography className={classes.cardContent}  variant="h5" component="h2" gutterBottom>
                 {bull} UC Berkeley Class of 2019.
               </Typography>
-              <Typography className={classes.cardContent}  variant="h5" component="h2">
+              <Typography className={classes.cardContent}  variant="h5" component="h2" gutterBottom>
                 {bull} Frontend focused developer and music producer.
               </Typography>
             </CardContent>
           </Card>
         </Grid>
 
-        <Grid item md zeroMinWidth data-aos="fade-right" data-aos-delay = '100' data-aos-duration="800" spacing={5}className={classes.grid}>
-          <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}} gutterBottom>
+        <Grid item md zeroMinWidth data-aos="fade-right" data-aos-delay = '100' data-aos-duration="800" className={classes.grid}>
+          <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}}>
             <CardContent>
               <MusicNoteIcon style={{fontSize: '45px', color: '#ffffff'}}/>
               <Typography className = {classes.cardContent} variant = "h4" component="h2" gutterBottom>
@@ -125,8 +125,8 @@ function About() {
           </Card>
         </Grid>
 
-          <Grid item s zeroMinWidth data-aos="fade-left" data-aos-delay = '100' data-aos-duration="800" spacing={5} className={classes.grid}>
-            <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}} gutterBottom>
+          <Grid item zeroMinWidth data-aos="fade-left" data-aos-delay = '100' data-aos-duration="800" className={classes.grid}>
+            <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}}>
               <CardContent>
                 <WebIcon style={{fontSize: '45px', color: '#ffffff'}}/>
                 <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
@@ -147,19 +147,24 @@ function About() {
 
       </Grid>
 
-      <div id="Music"/>
       <Typography className={classes.title} variant='h4'>
         Music
       </Typography>
       <Grid  data-aos="fade-in" data-aos-duration='500' container className={classes.soundcloudgrid}>
-          <Card m={500} class='SoundCloudCard' style={{variant:"outlined", borderRadius:32}} gutterBottom>
-            <CardContent className = {classes.row} spacing ={5}>
-              <iframe width="50%" height="100%" scrolling="yes" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/673985105&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-              <iframe  width="50%" height="100%" scrolling="yes" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/475294164&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe> 
+      <div id="Music"/>
+
+          <Card m={500} class='SoundCloudCard' style={{variant:"outlined", borderRadius:32}}>
+            <CardContent className = {classes.row}>
+              <iframe title="arianagrande" width="80%" height="100%" scrolling="yes" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/673985105&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </CardContent>
+            <CardContent>
+              <iframe  title="dreamhigh" width="80%" height="100%" scrolling="yes" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/475294164&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe> 
             </CardContent>
             <CardContent className = {classes.row}>         
-              <iframe  width="50%" height="100%" scrolling="yes" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/733610278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
-              <iframe  width="50%" height="100%" scrolling="yes" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200983491&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+              <iframe  title="beyonce" width="80%" height="100%" scrolling="yes" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/733610278&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
+            </CardContent>
+            <CardContent>
+              <iframe  title="beyonce_party" width="80%" height="100%" scrolling="yes" frameBorder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200983491&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe>
             </CardContent>
           </Card>
       </Grid>
@@ -170,13 +175,13 @@ function About() {
       </Typography>
       <Grid container data-aos="fade-right" className={classes.portfoliogrid} spacing={5}>
         <Grid item lg zeroMinWidth className={classes.grid} style={{textAlign: 'left'}}>
-          <Card m={500}class='app' style={{variant:"outlined", borderRadius:32}} square gutterBottom>
+          <Card m={500}class='app' style={{variant:"outlined", borderRadius:32}} square>
             <CardContent>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
                 IKaraoke
               </Typography>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                <a target="_blank" href="https://nateshim.github.io/karaokeapp/"><img style={{width:'70%', height: '80%'}}src={ikaraoke} alt="loading..."/></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://nateshim.github.io/karaokeapp/"><img style={{width:'70%', height: '80%'}}src={ikaraoke} alt="loading..."/></a>
               </Typography>
               <Typography className={classes.cardContent}variant="h5" component="h2"gutterBottom>
                 Virtual karaoke machine by search
@@ -191,13 +196,13 @@ function About() {
           </Card>
         </Grid>
         <Grid item lg zeroMinWidth className={classes.grid} style={{textAlign: 'left'}}>
-          <Card m={500}class="app" style={{variant:"outlined", borderRadius:32}} square gutterBottom>
+          <Card m={500}class="app" style={{variant:"outlined", borderRadius:32}} square>
             <CardContent>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
                 CS101
               </Typography>
               <Typography className={classes.cardContent} variant="h4" component="h2" gutterBottom>
-                <a target="_blank" href="https://teaching-for-richmond-high.github.io/cs101/"><img style={{width:'70%', height: '80%'}}src={cs101} alt="loading..."/></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://teaching-for-richmond-high.github.io/cs101/"><img style={{width:'70%', height: '80%'}}src={cs101} alt="loading..."/></a>
               </Typography>
               <Typography className={classes.cardContent}variant="h5" component="h2"gutterBottom>
                 Website used for teaching beginning CS course at Richmond High School.
