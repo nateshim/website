@@ -85,7 +85,7 @@ function About() {
 
       <Grid id = "About" container className={classes.aboutGrid}>
 
-        <Grid item md zeroMinWidth data-aos="fade-left" data-aos-delay = '100' data-aos-duration='800'className={classes.grid}>
+        <Grid item data-aos="fade-left" data-aos-delay = '100' data-aos-duration='800'className={classes.grid}>
           <Card m={500} class = "Card" style={{variant:"outlined" , borderRadius:32}}>
             <CardContent>
               <PersonIcon style={{fontSize: '45px', color: '#ffffff'}}/>
@@ -105,7 +105,7 @@ function About() {
           </Card>
         </Grid>
 
-        <Grid item md zeroMinWidth data-aos="fade-right" data-aos-delay = '100' data-aos-duration="800" className={classes.grid}>
+        <Grid item data-aos="fade-right" data-aos-delay = '100' data-aos-duration="800" className={classes.grid}>
           <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}}>
             <CardContent>
               <MusicNoteIcon style={{fontSize: '45px', color: '#ffffff'}}/>
@@ -125,7 +125,7 @@ function About() {
           </Card>
         </Grid>
 
-          <Grid item zeroMinWidth data-aos="fade-left" data-aos-delay = '100' data-aos-duration="800" className={classes.grid}>
+          <Grid item data-aos="fade-left" data-aos-delay = '100' data-aos-duration="800" className={classes.grid}>
             <Card m={500} class='Card' style={{variant:"outlined", borderRadius:32}}>
               <CardContent>
                 <WebIcon style={{fontSize: '45px', color: '#ffffff'}}/>
