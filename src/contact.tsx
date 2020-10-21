@@ -11,6 +11,7 @@ import EmailIcon from '@material-ui/icons/Email';
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import CopyrightRoundedIcon from '@material-ui/icons/CopyrightRounded';
+import {Theme} from '@material-ui/core';
 
 const Contact = (props: StyledProps) => {
   const classes = props.classes;
@@ -55,15 +56,15 @@ const Contact = (props: StyledProps) => {
         <Container maxWidth="lg" className={classes.contact}>
           <Box display={'block'}>
             <Box className={classes.contactBox}>
-              <EmailIcon fontSize={'large'} className={classes.icon}/>
+              <EmailIcon fontSize={'inherit'} className={classes.icon}/>
               <a href="mailTo:nateshim@gmail.com" target="_blank" rel="noopener noreferrer" className={classes.link}>Email</a>
             </Box>
             <Box className={classes.contactBox}>
-              <LinkedinIcon fontSize={'large'} className={classes.icon}/>
+              <LinkedinIcon fontSize={'inherit'} className={classes.icon}/>
               <a href="https://www.linkedin.com/in/nathanael-shim-324b55115/" target="_blank" rel="noopener noreferrer" className={classes.link}>Linkedin</a>
             </Box>
             <Box className={classes.contactBox}>
-              <FacebookIcon fontSize={'large'} className={classes.icon}/>
+              <FacebookIcon fontSize={'inherit'} className={classes.icon}/>
               <a href = "https://www.facebook.com/nate.shim/" target="_blank" rel="noopener noreferrer" className={classes.link}>Facebook</a>
             </Box>
           </Box>
@@ -79,7 +80,7 @@ const Contact = (props: StyledProps) => {
   );
 }
 
-const useStyles = createStyles({
+const useStyles = (theme: Theme) => createStyles({
   contact: {
     display: 'flex',
     flexDirection: 'column',
@@ -106,7 +107,10 @@ const useStyles = createStyles({
       textDecoration: 'underline',
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
   },
   link: {
     color: '#F7F3F2',
@@ -120,12 +124,19 @@ const useStyles = createStyles({
       textDecoration: 'underline',
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+      marginTop: '.7rem',
+    },
   },
   subText: {
     fontFamily: 'Montserrat',
     color: '#F7F3F2',
     fontSize: '1rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '.5rem',
+    },
   },
   contactBox: {
     display: 'flex',
@@ -135,6 +146,12 @@ const useStyles = createStyles({
   icon: {
     color: '#F7F3F2',
     padding: '.5rem',
+    fontSize: '2rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.5rem',
+      padding: '0rem',
+      paddingTop: '.75rem',
+    },
   },
   copyRightContainer: {
     alignItems: 'center',

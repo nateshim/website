@@ -11,6 +11,7 @@ import Avatar from '@material-ui/core/Avatar';
 import {withStyles, createStyles} from '@material-ui/styles';
 import StyledProps from './props/StyledProps';
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import {Theme} from '@material-ui/core';
 
 const Navigation = (props: StyledProps) => {
   const classes = props.classes;
@@ -40,7 +41,7 @@ const Navigation = (props: StyledProps) => {
                 activeClass="active" 
                 spy={true} 
                 smooth={true} 
-                offset={-100} 
+                offset={0} 
                 duration={800} 
                 className={classes.text}
                 >
@@ -66,7 +67,7 @@ const Navigation = (props: StyledProps) => {
   );
 }
 
-const useStyles = createStyles({
+const useStyles = (theme: Theme) => createStyles({
   navBarShow: {
     padding: '1rem',
     backgroundColor: '#F7F3F2',
@@ -86,6 +87,9 @@ const useStyles = createStyles({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   text: {
     fontFamily: 'Montserrat',
@@ -97,7 +101,10 @@ const useStyles = createStyles({
       textDecoration: 'underline',
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1rem',
+    },
   },
   title: {
     fontFamily: 'Montserrat',

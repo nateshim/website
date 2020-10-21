@@ -7,6 +7,7 @@ import StyledProps from '../props/StyledProps';
 import ProjectCardProps from '../props/ProjectCardProps';
 import {withStyles, createStyles} from '@material-ui/styles';
 import {useSpring, animated} from 'react-spring';
+import {Theme} from '@material-ui/core';
 
 
 
@@ -19,7 +20,7 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
     const[isShowing, setIsShowing] = useState(false);
     
     return(
-        <Grid item xs={6}>
+        <Grid item xs={12} lg={6}>
             <a href={props.link} rel="noopener noreferrer" target="_blank">
                 <animated.div
                 onMouseMove={() => set({ s: calc })}
@@ -40,7 +41,7 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
     );
 }
 
-const useStyles = createStyles({
+const useStyles = (theme: Theme) => createStyles({
     text: {
       position: 'absolute',
       fontFamily: 'Montserrat',
@@ -49,6 +50,9 @@ const useStyles = createStyles({
       fontSize: '1.5rem',
       padding: '1rem',
       width: '100%',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '1rem',
+      }
     },
     picture: {
         height: '100%',
@@ -59,11 +63,17 @@ const useStyles = createStyles({
             opacity: 0,
             transitionDuration: '.5s',
         },
+        [theme.breakpoints.down('sm')]: {
+            width: '80vw',
+            height: '80vw',
+        }
     },
     card: {
         position: 'relative',
-        height: '100%',
-        width: '100%',
+        [theme.breakpoints.down('sm')]: {
+            width: '80vw',
+            height: '30vw',
+        }
     },
   });
   

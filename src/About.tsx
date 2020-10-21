@@ -52,8 +52,7 @@ const About = (props: StyledProps) => {
   return (  
     <Box id="nateshim" className={classes.backgroundContainer}>
       <Navigation/>
-
-      <Container className={classes.section} maxWidth={false}>
+      <Container id="hello" className={classes.section} maxWidth={false}>
         <WindupChildren>
           <span className={classes.bigText}>
             <Pace ms={85}>{"        hello."}</Pace>
@@ -61,16 +60,26 @@ const About = (props: StyledProps) => {
         </WindupChildren>
       </Container>
 
-      <Container id="about" className={classes.bio} maxWidth={false}>
-        <Box display={{xs: 'block', sm: 'flex', md: 'flex', lg: 'flex'}}>
-          <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
-          <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000' style={{backgroundColor: '#F7F3F2'}}>
-            <Container style={{padding: '4rem'}}>
-              <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
-            </Container>
-          </Card>
-        </Box>
-      </Container>
+      <Box id="about" className={classes.bio} display={{xs: 'block', sm: 'block', md: 'flex', lg: 'flex'}}>
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="stretch"
+          className={classes.aboutGrid}
+          >
+          <Grid item xs={3} >
+            <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
+          </Grid>
+          <Grid item xs={6}>
+            <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000' style={{backgroundColor: '#F7F3F2'}}>
+              <Container style={{padding: '4rem'}}>
+                <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
+              </Container>
+            </Card>
+          </Grid>
+        </Grid>
+      </Box>
 
       <Box className={classes.recentWork}>
           <Typography className={classes.recentWorkTitle}>Skills</Typography>
@@ -160,7 +169,7 @@ const useStyles = (theme: Theme) => createStyles({
     height: '100%',
     width: '100%',
     backgroundColor: '#F7F3F2',
-    backgroundPosition: 'center',
+    alignItems: 'center',
   },
   section: {
     display: 'flex',
@@ -170,34 +179,34 @@ const useStyles = (theme: Theme) => createStyles({
     padding: '18rem 0',
 
   },
+  aboutGrid: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
+  },
   bio: {
-    display: 'flex',
-    flexDirection: 'column',
     backgroundColor: '#FEB954',
-    alignItems: 'center',
     padding: '10rem 0',
     [theme.breakpoints.down('sm')]: {
       display: 'block',
     }
   },
   bioCard: {
-    marginRight: '1rem',
+    height: '100%',
+    width: '100%',
     [theme.breakpoints.down('sm')]: {
-      height: '165vw',
-      width: '100vw',
+      height: '80%',
+      width: '100%',
     },
   },
   avatar: {
     display: 'flex',
+    justifyContent: 'center',
     height: '300px',
     width: '300px',
-    marginRight: '3rem',
-    marginLeft: '1rem',
     [theme.breakpoints.down('sm')]: {
       height: '200px',
       width: '200px',
-      marginLeft: '6rem',
-      marginBottom: '2rem',
     },
   },
   text: {
@@ -207,7 +216,7 @@ const useStyles = (theme: Theme) => createStyles({
     padding: '2rem',
     cursor: 'default',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
+      fontSize: '.5rem',
     }
   },
   bigText: {
@@ -218,6 +227,9 @@ const useStyles = (theme: Theme) => createStyles({
     paddingBottom: '15rem',
     fontWeight: 'bold',
     cursor: 'default',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '3rem',
+    },
   },
   skillsGrid: {
     [theme.breakpoints.down('sm')]: {
@@ -235,6 +247,9 @@ const useStyles = (theme: Theme) => createStyles({
     fontSize: '2.5rem',
     padding: '2rem',
     cursor: 'default',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2rem',
+    },
   },
   projects: {
     backgroundColor: '#faf6f5',
