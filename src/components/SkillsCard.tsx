@@ -17,7 +17,7 @@ const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => 
     const [properties, set] = useSpring(() => ({ s: 1, config: { mass: 5, tension: 700, friction: 40 } }))
 
     return(
-        <Grid item xs={5} style={{display: 'flex'}}>
+        <Grid item xs={3} style={{display: 'flex'}}>
             <animated.div
             onMouseMove={() => set({ s: calc })}
             onMouseLeave={() => set({ s: 1 })}
