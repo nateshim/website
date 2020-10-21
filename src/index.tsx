@@ -2,7 +2,6 @@ import './css/index.css';
 import About from './About';
 import Projects from './projects';
 import Devlog from './devlog';
-import * as serviceWorker from './serviceWorker';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
