@@ -27,7 +27,7 @@ const useStyles = (theme: Theme) => createStyles({
       [theme.breakpoints.down('sm')]: {
         fontSize: '1rem',
         justifyContent: 'center'
-    }
+      },
     },
   });
   

@@ -181,6 +181,7 @@ const useStyles = (theme: Theme) => createStyles({
     }
   },
   bioCard: {
+    marginRight: '1rem',
     [theme.breakpoints.down('sm')]: {
       height: '165vw',
       width: '100vw',
@@ -191,6 +192,7 @@ const useStyles = (theme: Theme) => createStyles({
     height: '300px',
     width: '300px',
     marginRight: '3rem',
+    marginLeft: '1rem',
     [theme.breakpoints.down('sm')]: {
       height: '200px',
       width: '200px',

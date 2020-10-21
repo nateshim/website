@@ -17,11 +17,11 @@ const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => 
     const [properties, set] = useSpring(() => ({ s: 1, config: { mass: 5, tension: 700, friction: 40 } }))
 
     return(
-        <Grid item xs={3}>
+        <Grid item xs={5} style={{display: 'flex'}}>
             <animated.div
             onMouseMove={() => set({ s: calc })}
             onMouseLeave={() => set({ s: 1 })}
-            style={{ transform: properties.s.interpolate(trans) }}
+            style={{ display: 'flex', transform: properties.s.interpolate(trans) }}
             >
                 <Card className={classes.card}>
                     <CardContent>
@@ -46,7 +46,10 @@ const useStyles = (theme: Theme) => createStyles({
       cursor: 'default',
       [theme.breakpoints.down('sm')]: {
         fontSize: '1rem',
-    }
+      },
+      [theme.breakpoints.down('md')]: {
+        fontSize: '1rem',
+      },
       
     },
     card: {
@@ -58,8 +61,8 @@ const useStyles = (theme: Theme) => createStyles({
         }
     },
     icon: {
-      height: '40%',
-      width: '40%',
+      height: '30%',
+      width: '30%',
     },
   });
   
