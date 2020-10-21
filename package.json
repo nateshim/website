@@ -64,7 +64,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://nateshim.github.io",
+  "homepage": "https://nateshim.github.io/website",
   "devDependencies": {
     "gh-pages": "^2.2.0"
   }
