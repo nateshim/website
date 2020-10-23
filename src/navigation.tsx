@@ -87,9 +87,6 @@ const useStyles = (theme: Theme) => createStyles({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
   },
   text: {
     fontFamily: 'Montserrat',
@@ -111,7 +108,7 @@ const useStyles = (theme: Theme) => createStyles({
     color: '#12130F',
     fontSize: '1.5rem',
     marginBlock:'2rem',
-    paddingTop:'2rem',
+    paddingTop:'2.25rem',
     paddingLeft:'1rem',
     textDecoration: 'none',
     textDecorationColor: '#F7F3F2',
@@ -119,12 +116,23 @@ const useStyles = (theme: Theme) => createStyles({
       textDecoration: 'underline',
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
-    }
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   avatar: {
     fontSize: '1rem',
     width: '100px',
     height: '100px',
+    [theme.breakpoints.down('sm')]: {
+      width: '45px',
+      height: '45px',
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+    
   },
 });
 
