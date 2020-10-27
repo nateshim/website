@@ -6,6 +6,7 @@ import Avatar from '@material-ui/core/Avatar';
 import './css/About.css';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 import {withStyles, createStyles} from '@material-ui/styles';
 import Navigation from './navigation';
 import Contact from './contact';
@@ -60,22 +61,23 @@ const About = (props: StyledProps) => {
         </WindupChildren>
       </Container>
 
-      <Box id="about" className={classes.bio} display={{xs: 'block', sm: 'block', md: 'flex', lg: 'flex'}}>
+      <Box id="about" className={classes.bio}>
         <Grid
           container
           direction="row"
           justify="center"
           alignItems="stretch"
           className={classes.aboutGrid}
+          spacing={2}
           >
-          <Grid item xs={3} >
+          <Grid item xs={3} style={{display: 'flex'}}>
             <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
           </Grid>
-          <Grid item xs={6}>
-            <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000' style={{backgroundColor: '#F7F3F2'}}>
-              <Container style={{padding: '4rem'}}>
-                <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
-              </Container>
+          <Grid item xs={8} style={{display: 'flex'}}>
+            <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000'>
+                <CardContent>
+                  <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
+                </CardContent>
             </Card>
           </Grid>
         </Grid>
@@ -180,24 +182,26 @@ const useStyles = (theme: Theme) => createStyles({
 
   },
   aboutGrid: {
+    display: 'flex',
     [theme.breakpoints.down('sm')]: {
-      display: 'block',
+      display: 'block'
     },
   },
   bio: {
+    display: 'flex',
     backgroundColor: '#FEB954',
-    padding: '10rem 0',
+    padding: '6rem',
     [theme.breakpoints.down('sm')]: {
-      display: 'block',
-    }
+      display: 'block'
+    },
   },
   bioCard: {
-    height: '100%',
-    width: '100%',
+    display: 'flex',
+    backgroundColor: '#F7F3F2',
     [theme.breakpoints.down('sm')]: {
-      height: '80%',
-      width: '100%',
+      display: 'block',
     },
+    
   },
   avatar: {
     display: 'flex',
@@ -215,6 +219,9 @@ const useStyles = (theme: Theme) => createStyles({
     textAlign: 'left',
     padding: '2rem',
     cursor: 'default',
+    [theme.breakpoints.down('md')]: {
+      fontSize: '.5rem',
+    },
     [theme.breakpoints.down('sm')]: {
       fontSize: '.5rem',
     }
