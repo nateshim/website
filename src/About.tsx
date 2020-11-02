@@ -67,10 +67,10 @@ const About = (props: StyledProps) => {
           className={classes.aboutGrid}
           spacing={2}
           >
-          <Grid item xs={12} lg={4}>
+          <Grid item xs={12} lg={3}>
             <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
           </Grid>
-          <Grid item xs={12} lg={8}>
+          <Grid item xs={12} lg={9}>
             <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000'>
                 <CardContent>
                   <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
