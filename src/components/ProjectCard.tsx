@@ -20,7 +20,7 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
     const[isShowing, setIsShowing] = useState(false);
     
     return(
-        <Grid item xs={12} lg={6}>
+        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
             <a href={props.link} rel="noopener noreferrer" target="_blank">
                 <animated.div
                 onMouseMove={() => set({ s: calc })}
@@ -63,17 +63,10 @@ const useStyles = (theme: Theme) => createStyles({
             opacity: 0,
             transitionDuration: '.5s',
         },
-        [theme.breakpoints.down('sm')]: {
-            width: '80vw',
-            height: '80vw',
-        }
+        
     },
     card: {
-        position: 'relative',
-        [theme.breakpoints.down('sm')]: {
-            width: '80vw',
-            height: '30vw',
-        }
+        
     },
   });
   

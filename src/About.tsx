@@ -46,7 +46,7 @@ const About = (props: StyledProps) => {
   ];
   const PythonItems = [
     "Package-related tools: brew, pip, setuptools",
-    "Experience with Django vs. Flask",
+    "Experience with popular web frameworks such as Django and Flask",
     "MySQL, Database integration"
   ];
   AOS.init();
@@ -64,16 +64,13 @@ const About = (props: StyledProps) => {
       <Box id="about" className={classes.bio}>
         <Grid
           container
-          direction="row"
-          justify="center"
-          alignItems="stretch"
           className={classes.aboutGrid}
           spacing={2}
           >
-          <Grid item xs={3} style={{display: 'flex'}}>
+          <Grid item xs={12} lg={4}>
             <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
           </Grid>
-          <Grid item xs={8} style={{display: 'flex'}}>
+          <Grid item xs={12} lg={8}>
             <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000'>
                 <CardContent>
                   <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
@@ -87,11 +84,7 @@ const About = (props: StyledProps) => {
           <Typography className={classes.recentWorkTitle}>Skills</Typography>
           <Grid 
             container
-            className={classes.skillsGrid}
-            spacing={2}
-            direction="row"
-            justify="center"
-            alignItems="stretch"
+            spacing={3}
             >
             <SkillsCard icon={react} title={"React"}>
               <SkillsCardContent
@@ -121,9 +114,6 @@ const About = (props: StyledProps) => {
         <Grid 
           container
           spacing={3}
-          direction="row"
-          justify="center"
-          alignItems="stretch"
           >
             <ProjectCard background={cs1} 
             title= {
@@ -198,10 +188,6 @@ const useStyles = (theme: Theme) => createStyles({
   bioCard: {
     display: 'flex',
     backgroundColor: '#F7F3F2',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block',
-    },
-    
   },
   avatar: {
     display: 'flex',
@@ -209,6 +195,10 @@ const useStyles = (theme: Theme) => createStyles({
     height: '300px',
     width: '300px',
     [theme.breakpoints.down('sm')]: {
+      height: '200px',
+      width: '200px',
+    },
+    [theme.breakpoints.down('md')]: {
       height: '200px',
       width: '200px',
     },
@@ -237,11 +227,6 @@ const useStyles = (theme: Theme) => createStyles({
     [theme.breakpoints.down('sm')]: {
       fontSize: '3rem',
     },
-  },
-  skillsGrid: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'grid'
-    }
   },
   recentWork: {
     textAlign: 'center',

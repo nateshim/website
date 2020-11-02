@@ -99,6 +99,9 @@ const useStyles = (theme: Theme) => createStyles({
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
     },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '1rem',
+    },
     [theme.breakpoints.down('sm')]: {
       fontSize: '1rem',
     },
@@ -117,20 +120,19 @@ const useStyles = (theme: Theme) => createStyles({
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       display: 'none',
     },
+    
   },
   avatar: {
     fontSize: '1rem',
     width: '100px',
     height: '100px',
-    [theme.breakpoints.down('sm')]: {
+    
+    [theme.breakpoints.down('xs')]: {
       width: '45px',
       height: '45px',
-    },
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
     },
     
   },

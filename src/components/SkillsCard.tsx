@@ -9,6 +9,7 @@ import SkillsCardProps from '../props/SkillsCardProps';
 import {withStyles, createStyles} from '@material-ui/styles';
 import {useSpring, animated} from 'react-spring';
 import { Theme } from '@material-ui/core';
+import SkillsCardContent from './SkillsCardContent';
 
 const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => {
     const classes = props.classes;
@@ -17,7 +18,7 @@ const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => 
     const [properties, set] = useSpring(() => ({ s: 1, config: { mass: 5, tension: 700, friction: 40 } }))
 
     return(
-        <Grid item xs={3} style={{display: 'flex'}}>
+      <Grid item xs={12} sm={6} md={6} lg={3} style={{display: 'flex'}}>
             <animated.div
             onMouseMove={() => set({ s: calc })}
             onMouseLeave={() => set({ s: 1 })}
@@ -28,11 +29,11 @@ const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => 
                         <img className={classes.icon} src={props.icon} alt="reacticon"/>
                         <Divider/>
                         <Typography className={classes.text}>{props.title}</Typography>
-                            {props.children}
+                        {props.children}
                     </CardContent>
                 </Card>
             </animated.div>
-        </Grid>
+      </Grid>
     );
 }
 
@@ -45,25 +46,21 @@ const useStyles = (theme: Theme) => createStyles({
       padding: '1rem',
       cursor: 'default',
       [theme.breakpoints.down('sm')]: {
-        fontSize: '1rem',
+        fontSize: '1.25rem',
       },
       [theme.breakpoints.down('md')]: {
-        fontSize: '1rem',
+        fontSize: '1.25rem',
       },
-      
-    },
-    card: {
-        display: 'block',
-        [theme.breakpoints.down('sm')]: {
-            width: '80vw',
-            height: '150vw',
-            marginBottom: '2rem',
-        }
     },
     icon: {
-      height: '30%',
-      width: '30%',
+      height: '10vw',
+      width: '10vw',
     },
+    card: {
+      [theme.breakpoints.down('xs')]: {
+        width: '60vw',
+      },
+    }
   });
   
   export default withStyles(useStyles)(SkillsCard);
