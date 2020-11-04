@@ -50,8 +50,8 @@ const useStyles = (theme: Theme) => createStyles({
       fontSize: '1.5rem',
       padding: '1rem',
       width: '100%',
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '1rem',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: '2vw',
       }
     },
     picture: {
