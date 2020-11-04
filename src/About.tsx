@@ -65,12 +65,12 @@ const About = (props: StyledProps) => {
         <Grid
           container
           className={classes.aboutGrid}
-          spacing={2}
+          spacing={3}
           >
-          <Grid item xs={12} lg={3}>
+          <Grid item xs={12} sm={12} md={12} lg={3} style={{justifyContent: 'center'}}>
             <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
           </Grid>
-          <Grid item xs={12} lg={9}>
+          <Grid item xs={12} sm={12} md={12} lg={9} style={{justifyContent: 'center'}}>
             <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000'>
                 <CardContent>
                   <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
@@ -160,6 +160,9 @@ const useStyles = (theme: Theme) => createStyles({
     backgroundSize: 'cover',
     height: '100%',
     width: '100%',
+    margin: '0px',
+    padding: '0px',
+    overflowX: 'hidden',
     backgroundColor: '#F7F3F2',
     alignItems: 'center',
   },
@@ -181,26 +184,17 @@ const useStyles = (theme: Theme) => createStyles({
     display: 'flex',
     backgroundColor: '#FEB954',
     padding: '6rem',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block'
-    },
   },
   bioCard: {
     display: 'flex',
     backgroundColor: '#F7F3F2',
   },
   avatar: {
-    display: 'flex',
-    justifyContent: 'center',
-    height: '300px',
-    width: '300px',
+    height: '20vw',
+    width: '20vw',
     [theme.breakpoints.down('sm')]: {
-      height: '200px',
-      width: '200px',
-    },
-    [theme.breakpoints.down('md')]: {
-      height: '200px',
-      width: '200px',
+      height: '40vw',
+      width: '40vw',
     },
   },
   text: {
@@ -212,9 +206,6 @@ const useStyles = (theme: Theme) => createStyles({
     [theme.breakpoints.down('md')]: {
       fontSize: '.5rem',
     },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '.5rem',
-    }
   },
   bigText: {
     fontFamily: 'Colombo',

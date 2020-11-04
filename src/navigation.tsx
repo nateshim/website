@@ -34,7 +34,7 @@ const Navigation = (props: StyledProps) => {
                   Nathanael Shim
                 </ScrollLink>
             </Box>
-          <Box>
+          <Box className={classes.navBar}>
               <ScrollLink 
                 style={{cursor: 'pointer'}} 
                 to="about" 
@@ -68,6 +68,12 @@ const Navigation = (props: StyledProps) => {
 }
 
 const useStyles = (theme: Theme) => createStyles({
+  navBar: {
+    [theme.breakpoints.down('xs')]: {
+      marginRight: '1rem',
+    },
+    
+  },
   navBarShow: {
     padding: '1rem',
     backgroundColor: '#F7F3F2',
@@ -102,9 +108,6 @@ const useStyles = (theme: Theme) => createStyles({
     [theme.breakpoints.down('xs')]: {
       fontSize: '1rem',
     },
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
-    },
   },
   title: {
     fontFamily: 'Montserrat',
@@ -129,7 +132,6 @@ const useStyles = (theme: Theme) => createStyles({
     fontSize: '1rem',
     width: '100px',
     height: '100px',
-    
     [theme.breakpoints.down('xs')]: {
       width: '45px',
       height: '45px',

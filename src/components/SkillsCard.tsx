@@ -9,7 +9,6 @@ import SkillsCardProps from '../props/SkillsCardProps';
 import {withStyles, createStyles} from '@material-ui/styles';
 import {useSpring, animated} from 'react-spring';
 import { Theme } from '@material-ui/core';
-import SkillsCardContent from './SkillsCardContent';
 
 const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => {
     const classes = props.classes;
@@ -18,7 +17,7 @@ const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => 
     const [properties, set] = useSpring(() => ({ s: 1, config: { mass: 5, tension: 700, friction: 40 } }))
 
     return(
-      <Grid item xs={12} sm={6} md={6} lg={3} style={{display: 'flex'}}>
+      <Grid item xs={12} sm={12} md={6} lg={3} style={{display: 'flex', justifyContent: 'center'}}>
             <animated.div
             onMouseMove={() => set({ s: calc })}
             onMouseLeave={() => set({ s: 1 })}
