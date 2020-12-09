@@ -135,7 +135,7 @@ const About = (props: StyledProps) => {
             title= {
               <div>
                 <p>
-                  new.ebcb.org
+                  EBCB
                 </p> 
                 <ul>
                   <li>React | Material UI</li>
@@ -145,7 +145,7 @@ const About = (props: StyledProps) => {
               </div>
             } 
             color ='#232D40'
-            link="https://new.ebcb.org/">
+            link="https://www.ebcb.org/">
             </ProjectCard>
         </Grid>
       </Box>
