@@ -17,6 +17,7 @@ import {
 import logo1 from './static/blog/10.04.2020/1.png';
 import logo2 from './static/blog/10.04.2020/2.png';
 import logo3 from './static/blog/10.04.2020/3.png';
+import editorSample from './static/blog/10.25.2020/editor_sample.png'
 
 const Devlog = (props: StyledProps) => {
   const classes = props.classes;
@@ -25,6 +26,20 @@ const Devlog = (props: StyledProps) => {
       <OtherNavigation/>
       <Container className={classes.section} maxWidth={false}>
         <Grid container xs={8}>
+        <BlogCard title="Pixit Devlog 1" subtitle="10.25.2020">
+            <Typography className={classes.text}>
+              Got a basic pixel editor up. Here is a snippet:
+            </Typography>
+            <img className={classes.bigImage} alt="editorSample" src={editorSample}/>
+            <Typography className={classes.text}>
+            For now, I only have one color available for drawing, but I plan on putting that feature off till I can get all the basic web behavior down. It also supports real time so any user who accesses a link to the editor can edit it in real time. However, the editor does not save the state so if all users exit, the editor will automatically delete itself. Will need to look into that
+            </Typography>
+            <Typography className={classes.text}>
+              Currently, I am still setting up the environment. I have the react app set up and am looking into developing the server for the app.
+            </Typography>
+            <Divider/>
+            <Typography className={classes.linkText}>Links: </Typography>
+          </BlogCard>
           <BlogCard title="Pixit" subtitle="10.04.2020">
             <Typography className={classes.text}>
               Recently, I have been interested in real time applications and decided to make my own real time app. 
@@ -79,6 +94,13 @@ const useStyles = (theme: Theme) => createStyles({
       height: '50%',
       width: '50%',
     }
+  },
+  bigImage: {
+    padding: '1rem',
+    display: 'flex',
+    height: '50%',
+    width: '50%',
+    
   },
   text: {
     color: '#12130F',
