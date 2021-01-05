@@ -19,7 +19,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/react-scroll": "^1.8.0",
     "aos": "^3.0.0-beta.6",
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "bufferutil": "^4.0.1",
     "express": "^4.17.1",
     "jquery-parallax.js": "^1.5.0",
