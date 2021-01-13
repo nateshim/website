@@ -23,7 +23,7 @@ const OtherNavigation = (props: StyledProps) => {
               <Avatar alt="Lonely Fox" src={lonelyfox} className={classes.avatar}></Avatar>
               <Link to= "/" className={classes.title}>Nathanael Shim</Link>
             </Box>
-          <Box>
+          <Box className={classes.navBar}>
             <Link to= "/" className={classes.text}>About</Link>
             <Link to= "/" className={classes.text}>Projects</Link>
             <Link to= "/devlog" className={classes.text}>Blog</Link>
@@ -35,6 +35,12 @@ const OtherNavigation = (props: StyledProps) => {
 }
 
 const useStyles = (theme : Theme) => createStyles({
+  navBar: {
+    [theme.breakpoints.down('xs')]: {
+      marginRight: '1rem',
+    },
+    
+  },
   navBarShow: {
     padding: '1rem',
     backgroundColor: '#F7F3F2',
@@ -54,9 +60,6 @@ const useStyles = (theme : Theme) => createStyles({
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
   },
   text: {
     fontFamily: 'Montserrat',
@@ -69,7 +72,7 @@ const useStyles = (theme : Theme) => createStyles({
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
     },
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       fontSize: '1rem',
     },
   },
@@ -78,7 +81,7 @@ const useStyles = (theme : Theme) => createStyles({
     color: '#12130F',
     fontSize: '1.5rem',
     marginBlock:'2rem',
-    paddingTop:'2rem',
+    paddingTop:'.25rem',
     paddingLeft:'1rem',
     textDecoration: 'none',
     textDecorationColor: '#F7F3F2',
@@ -86,12 +89,21 @@ const useStyles = (theme : Theme) => createStyles({
       textDecoration: 'underline',
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
-    }
+    },
+    [theme.breakpoints.down('xs')]: {
+      display: 'none',
+    },
+    
   },
   avatar: {
     fontSize: '1rem',
     width: '100px',
     height: '100px',
+    [theme.breakpoints.down('xs')]: {
+      width: '45px',
+      height: '45px',
+    },
+    
   },
 });
 
