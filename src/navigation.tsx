@@ -114,7 +114,7 @@ const useStyles = (theme: Theme) => createStyles({
     color: '#12130F',
     fontSize: '1.5rem',
     marginBlock:'2rem',
-    paddingTop:'2.25rem',
+    paddingTop:'.25rem',
     paddingLeft:'1rem',
     textDecoration: 'none',
     textDecorationColor: '#F7F3F2',
