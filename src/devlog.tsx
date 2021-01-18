@@ -26,6 +26,14 @@ const Devlog = (props: StyledProps) => {
       <OtherNavigation/>
       <Container className={classes.section} maxWidth={false}>
         <Grid container xs={8}>
+        <BlogCard title="Pixit Devlog 2" subtitle="01.18.2020">
+            <Typography className={classes.text}>
+              Sorry for not updating regularly. Just a quick update, just finished getting a database up with postgres and S3. Basically, the plan is to hold all user data (email, username, passwords, etc) on postgres, 
+              and hold the actual documents that people will be drawing pixels on in S3. Right now, users are able to upload files on the site, but the next step is to make it similar to Google Drive where users can create and edit documents fully on the website. 
+            </Typography>
+            <Divider/>
+            <Typography className={classes.linkText}>Links: </Typography>
+          </BlogCard>
         <BlogCard title="Pixit Devlog 1" subtitle="10.25.2020">
             <Typography className={classes.text}>
               Got a basic pixel editor up. Here is a snippet:
