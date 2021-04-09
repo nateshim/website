@@ -15,6 +15,7 @@ import nateshim from './static/nateshim.png';
 import {WindupChildren, Pace} from 'windups';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import raindrinker from './static/raindrinker.png';
 import cs1 from './static/CS1.png';
 import newebcb from './static/newebcb.png';
 import react from './static/react.png';
@@ -146,6 +147,22 @@ const About = (props: StyledProps) => {
             } 
             color ='#232D40'
             link="https://www.ebcb.org/">
+            </ProjectCard>
+            <ProjectCard background={raindrinker} 
+            title= {
+              <div>
+                <p>
+                  Raindrinker
+                </p> 
+                <ul>
+                  <li>Vue</li>
+                  <li>Online portfolio for game developer</li>
+                  <li>Assisted Raindrinker in creating responsive webpages and mobile design</li>
+                </ul>
+              </div>
+            } 
+            color ='#0F0F15'
+            link="https://raindrinker.com/">
             </ProjectCard>
         </Grid>
       </Box>
