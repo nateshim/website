@@ -26,7 +26,6 @@ const OtherNavigation = (props: StyledProps) => {
           <Box className={classes.navBar}>
             <Link to= "/" className={classes.text}>About</Link>
             <Link to= "/" className={classes.text}>Projects</Link>
-            <Link to= "/devlog" className={classes.text}>Blog</Link>
           </Box>
           </Toolbar>
         </Container>
