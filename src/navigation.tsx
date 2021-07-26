@@ -59,7 +59,6 @@ const Navigation = (props: StyledProps) => {
                 >
                   Projects
                 </ScrollLink>        
-              <Link to= "/devlog" className={classes.text}>Blog</Link>
           </Box>
           </Toolbar>
         </Container>
