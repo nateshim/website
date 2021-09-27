@@ -20,7 +20,7 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
     const[isShowing, setIsShowing] = useState(false);
     
     return(
-        <Grid item xs={12} sm={12} md={12} lg={6} xl={6}>
+        <Grid className={classes.grid} item xs={12} sm={12} md={12} lg={6} xl={6}>
             <a href={props.link} rel="noopener noreferrer" target="_blank">
                 <animated.div
                 onMouseMove={() => set({ s: calc })}
@@ -42,6 +42,9 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
 }
 
 const useStyles = (theme: Theme) => createStyles({
+    grid: {
+        display: 'flex',
+    },
     text: {
       position: 'absolute',
       fontFamily: 'Montserrat',

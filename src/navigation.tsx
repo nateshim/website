@@ -5,7 +5,6 @@ import Container from '@material-ui/core/Container';
 import Toolbar from '@material-ui/core/Toolbar';
 import Box from '@material-ui/core/Box';
 import AppBar from '@material-ui/core/AppBar'
-import {Link} from 'react-router-dom';
 import {Link as ScrollLink} from 'react-scroll';
 import Avatar from '@material-ui/core/Avatar';
 import {withStyles, createStyles} from '@material-ui/styles';
@@ -20,10 +19,9 @@ const Navigation = (props: StyledProps) => {
       <AppBar elevation={0} className={trigger ? classes.navBarHide : classes.navBarShow} position = "sticky">
         <Container>
           <Toolbar disableGutters>
-            <Box className={classes.logoContainer}>
-              <Avatar alt="Lonely Fox" src={lonelyfox} className={classes.avatar}></Avatar>
+            <Container className={classes.logoContainer}>
+              <Avatar alt="Lonely Fox" src={lonelyfox} className={classes.avatar}/>
               <ScrollLink 
-                style={{cursor: 'pointer'}} 
                 to="nateshim" 
                 activeClass="active" 
                 spy={true} 
@@ -33,10 +31,9 @@ const Navigation = (props: StyledProps) => {
                 >
                   Nathanael Shim
                 </ScrollLink>
-            </Box>
+            </Container>
           <Box className={classes.navBar}>
               <ScrollLink 
-                style={{cursor: 'pointer'}} 
                 to="about" 
                 activeClass="active" 
                 spy={true} 
@@ -48,7 +45,6 @@ const Navigation = (props: StyledProps) => {
                   About
                 </ScrollLink>
                 <ScrollLink 
-                style={{cursor: 'pointer'}} 
                 to="projects" 
                 activeClass="active" 
                 spy={true} 
@@ -89,15 +85,13 @@ const useStyles = (theme: Theme) => createStyles({
     display: 'flex',
     backgroundColor: '#F7F3F2',
     flexGrow: 1,
-    whiteSpace: 'nowrap',
-    overflow: 'hidden',
-    textOverflow: 'ellipsis',
   },
   text: {
+    cursor: 'pointer',
     fontFamily: 'Montserrat',
     color: '#12130F',
-    fontSize: '1.5rem',
-    padding: '1rem',
+    fontSize: '25px',
+    padding: '20px',
     textDecorationColor: '#F7F3F2',
     '&:hover': {
       textDecoration: 'underline',
@@ -105,16 +99,16 @@ const useStyles = (theme: Theme) => createStyles({
       transitionDuration: '.3s',
     },
     [theme.breakpoints.down('xs')]: {
-      fontSize: '1rem',
+      fontSize: '20px',
     },
   },
   title: {
+    display: 'flex',
+    alignItems: 'center',
+    cursor: 'pointer',
     fontFamily: 'Montserrat',
     color: '#12130F',
-    fontSize: '1.5rem',
-    marginBlock:'2rem',
-    paddingTop:'.25rem',
-    paddingLeft:'1rem',
+    fontSize: '25px',
     textDecoration: 'none',
     textDecorationColor: '#F7F3F2',
     '&:hover': {
@@ -128,7 +122,7 @@ const useStyles = (theme: Theme) => createStyles({
     
   },
   avatar: {
-    fontSize: '1rem',
+    marginRight: '10px',
     width: '100px',
     height: '100px',
     [theme.breakpoints.down('xs')]: {
