@@ -27,7 +27,7 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
                 onMouseLeave={() => set({ s: 1 })}
                 style={{ transform: properties.s.interpolate(trans)}}
                 >
-                    <Card className={classes.card} style={{backgroundColor: props.color}}>
+                    <Card style={{backgroundColor: props.color}}>
                         <Typography className={classes.text}>
                             {isShowing && (props.title)}
                         </Typography>
@@ -44,6 +44,7 @@ const ProjectCard = (props: PropsWithChildren<StyledProps> & ProjectCardProps) =
 const useStyles = (theme: Theme) => createStyles({
     grid: {
         display: 'flex',
+        justifyContent: 'center',
     },
     text: {
       position: 'absolute',
@@ -67,10 +68,12 @@ const useStyles = (theme: Theme) => createStyles({
     },
     media: {
         height: '500px',
+        objectFit: 'cover',
         [theme.breakpoints.down('xs')]: {
             height: '200px',
-            objectFit: 'cover',
+            width: '300px',
         },
+
         
     },
   });

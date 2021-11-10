@@ -3,80 +3,90 @@ import Box from '@material-ui/core/Box';
 import Container from '@material-ui/core/Container';
 import './css/About.css';
 import Typography from '@material-ui/core/Typography';
-import {withStyles, createStyles} from '@material-ui/styles';
+import { withStyles, createStyles } from '@material-ui/styles';
 import StyledProps from './props/StyledProps';
-import {Link} from 'react-router-dom';
-import {Link as ScrollLink} from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 import EmailIcon from '@material-ui/icons/Email';
 import LinkedinIcon from '@material-ui/icons/LinkedIn';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import CopyrightRoundedIcon from '@material-ui/icons/CopyrightRounded';
-import {Theme} from '@material-ui/core';
+import { Theme } from '@material-ui/core';
 
 const Contact = (props: StyledProps) => {
   const classes = props.classes;
-  return (   
+  return (
     <Box className={classes.footer}>
       <Box display={'flex'}>
-        <Container maxWidth ="lg" className={classes.contact}>
+        <Container maxWidth="lg" className={classes.contact}>
           <Box display={'block'}>
             <Box className={classes.contactBox}>
-              <ScrollLink 
-                style={{cursor: 'pointer'}} 
-                to="about" 
-                activeClass="active" 
-                spy={true} 
-                smooth={true} 
-                offset={-150} 
-                duration={800} 
+              <ScrollLink
+                style={{ cursor: 'pointer' }}
+                to="nateshim"
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={800}
                 className={classes.text}
-                >
-                  About
-                </ScrollLink>
+              >
+                Home
+              </ScrollLink>
             </Box>
             <Box className={classes.contactBox}>
-            <ScrollLink 
-                style={{cursor: 'pointer'}} 
-                to="projects" 
-                activeClass="active" 
-                spy={true} 
-                smooth={true} 
-                offset={-100} 
-                duration={800} 
+              <ScrollLink
+                style={{ cursor: 'pointer' }}
+                to="about"
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={-150}
+                duration={800}
                 className={classes.text}
-                >
-                  Projects
-                </ScrollLink>
+              >
+                About
+              </ScrollLink>
             </Box>
             <Box className={classes.contactBox}>
-              <Link to="/devlog" className={classes.text}>Blog</Link>
+              <ScrollLink
+                style={{ cursor: 'pointer' }}
+                to="projects"
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={-100}
+                duration={800}
+                className={classes.text}
+              >
+                Projects
+              </ScrollLink>
             </Box>
           </Box>
         </Container>
         <Container maxWidth="lg" className={classes.contact}>
           <Box display={'block'}>
             <Box className={classes.contactBox}>
-              <EmailIcon fontSize={'inherit'} className={classes.icon}/>
+              <EmailIcon fontSize={'inherit'} className={classes.icon} />
               <a href="mailTo:nateshim@gmail.com" target="_blank" rel="noopener noreferrer" className={classes.link}>Email</a>
             </Box>
             <Box className={classes.contactBox}>
-              <LinkedinIcon fontSize={'inherit'} className={classes.icon}/>
+              <LinkedinIcon fontSize={'inherit'} className={classes.icon} />
               <a href="https://www.linkedin.com/in/nathanael-shim-324b55115/" target="_blank" rel="noopener noreferrer" className={classes.link}>Linkedin</a>
             </Box>
             <Box className={classes.contactBox}>
-              <FacebookIcon fontSize={'inherit'} className={classes.icon}/>
-              <a href = "https://www.facebook.com/nate.shim/" target="_blank" rel="noopener noreferrer" className={classes.link}>Facebook</a>
+              <FacebookIcon fontSize={'inherit'} className={classes.icon} />
+              <a href="https://www.facebook.com/nate.shim/" target="_blank" rel="noopener noreferrer" className={classes.link}>Facebook</a>
             </Box>
           </Box>
         </Container>
       </Box>
       <Container maxWidth="lg" className={classes.copyRightContainer}>
-          <Typography className={classes.subText}>
-            <CopyrightRoundedIcon className={classes.copyRightIcon} fontSize="inherit"/>
-            2020 Nathanael Shim
-          </Typography>
+        <Typography className={classes.subText}>
+          <CopyrightRoundedIcon className={classes.copyRightIcon} fontSize="inherit" />
+          2020 Nathanael Shim
+        </Typography>
       </Container>
-    </Box> 
+    </Box>
   );
 }
 

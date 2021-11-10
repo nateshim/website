@@ -22,6 +22,8 @@ import react from './static/react.png';
 import node from './static/node.png';
 import python from './static/python.png';
 import js from './static/javascript.png';
+import puzzlechess from './static/puzzlechess.png';
+import checklog from './static/checklog.png';
 import SkillsCard from './components/SkillsCard';
 import SkillsCardContent from './components/SkillsCardContent';
 import ProjectCard from './components/ProjectCard';
@@ -171,13 +173,45 @@ const About = (props: StyledProps) => {
                 </p> 
                 <ul>
                   <li>HTML/JS</li>
-                  <li>video game info site</li>
+                  <li>Video game info site</li>
                   <li>Project 1 for GA Immersive</li>
                 </ul>
               </div>
             } 
-            color ='#0F0F15'
+            color ='#333533'
             link="https://game-feed.netlify.app/">
+            </ProjectCard>
+            <ProjectCard background={puzzlechess} 
+            title= {
+              <div>
+                <p>
+                  PuzzleChess
+                </p> 
+                <ul>
+                  <li>React/Express</li>
+                  <li>Web hosted game where users can post, rate, and solve chess puzzles</li>
+                  <li>Project 2 for GA Immersive</li>
+                </ul>
+              </div>
+            } 
+            color ='#52716C'
+            link="https://puzzle-chess.netlify.app/">
+            </ProjectCard>
+            <ProjectCard background={checklog} 
+            title= {
+              <div>
+                <p>
+                  CheckLog
+                </p> 
+                <ul>
+                  <li>React/Flask</li>
+                  <li>Web application for tracking conversations</li>
+                  <li>Project 4 for GA Immersive</li>
+                </ul>
+              </div>
+            } 
+            color ='#41337A'
+            link="https://check-log.netlify.app/">
             </ProjectCard>
         </Grid>
       </Box>

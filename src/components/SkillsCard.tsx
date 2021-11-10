@@ -57,7 +57,7 @@ const useStyles = (theme: Theme) => createStyles({
     },
     card: {
       [theme.breakpoints.down('xs')]: {
-        width: '60vw',
+        width: '300px',
       },
     }
   });
