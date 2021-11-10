@@ -74,6 +74,9 @@ const useStyles = (theme: Theme) => createStyles({
     backgroundColor: '#F7F3F2',
     transform: 'translateY(0)',
     transition: 'transform 1s',
+    [theme.breakpoints.down('xs')]: {
+      padding: '0rem',
+    },
   },
   navBarHide: {
     padding: '1rem',
@@ -128,6 +131,7 @@ const useStyles = (theme: Theme) => createStyles({
     [theme.breakpoints.down('xs')]: {
       width: '45px',
       height: '45px',
+      marginRight: '0px'
     },
     
   },

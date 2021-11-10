@@ -6,7 +6,6 @@ import Avatar from '@material-ui/core/Avatar';
 import './css/About.css';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
 import {withStyles, createStyles} from '@material-ui/styles';
 import Navigation from './navigation';
 import Contact from './contact';
@@ -66,17 +65,16 @@ const About = (props: StyledProps) => {
       <Box id="about" className={classes.bio}>
         <Grid
           container
-          className={classes.aboutGrid}
           spacing={3}
+          direction="row"
+          justify="center"
           >
-          <Grid item xs={12} sm={12} md={12} lg={3} style={{justifyContent: 'center'}}>
+          <Grid item sm={12} style={{display: 'flex', justifyContent: 'center'}}>
             <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
           </Grid>
-          <Grid item xs={12} sm={12} md={12} lg={9} style={{justifyContent: 'center'}}>
+          <Grid item sm={12} style={{display: 'flex', justifyContent: 'center'}}>
             <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000'>
-                <CardContent>
                   <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
-                </CardContent>
             </Card>
           </Grid>
         </Grid>
@@ -208,34 +206,31 @@ const useStyles = (theme: Theme) => createStyles({
     padding: '18rem 0',
 
   },
-  aboutGrid: {
-    display: 'flex',
-    [theme.breakpoints.down('sm')]: {
-      display: 'block'
-    },
-  },
   bio: {
-    display: 'flex',
     backgroundColor: '#FEB954',
     padding: '6rem',
   },
   bioCard: {
-    display: 'flex',
     backgroundColor: '#F7F3F2',
+    padding: '10px',
+    width: '500px',
+    [theme.breakpoints.down('sm')]: {
+      width: '300px',
+    },
   },
   avatar: {
-    height: '20vw',
-    width: '20vw',
+    height: '200px',
+    width: '200px',
     [theme.breakpoints.down('sm')]: {
-      height: '40vw',
-      width: '40vw',
+      height: '100px',
+      width: '100px',
     },
   },
   text: {
     color: '#12130F',
-    fontSize: '1.5rem',
+    fontSize: '1rem',
     textAlign: 'left',
-    padding: '2rem',
+    padding: '10px',
     cursor: 'default',
     [theme.breakpoints.down('md')]: {
       fontSize: '.5rem',
