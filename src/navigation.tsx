@@ -32,7 +32,7 @@ const Navigation = (props: StyledProps) => {
                   Nathanael Shim
                 </ScrollLink>
             </Container>
-          <Box className={classes.navBar}>
+          {/* <Box className={classes.navBar}> */}
               {/* <ScrollLink 
                 to="about" 
                 activeClass="active" 
@@ -55,7 +55,7 @@ const Navigation = (props: StyledProps) => {
                 >
                   Projects
                 </ScrollLink>         */}
-          </Box>
+          {/* </Box> */}
           </Toolbar>
         </Container>
       </AppBar>
@@ -86,8 +86,12 @@ const useStyles = (theme: Theme) => createStyles({
   },
   logoContainer: {
     display: 'flex',
+    justifyContent: 'flex-start',
     backgroundColor: '#F7F3F2',
     flexGrow: 1,
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center',
+    },
   },
   text: {
     cursor: 'pointer',
@@ -107,7 +111,6 @@ const useStyles = (theme: Theme) => createStyles({
   },
   title: {
     display: 'flex',
-    alignItems: 'center',
     cursor: 'pointer',
     fontFamily: 'Montserrat',
     color: '#12130F',
@@ -119,10 +122,6 @@ const useStyles = (theme: Theme) => createStyles({
       textDecorationColor: '#FEB954',
       transitionDuration: '.3s',
     },
-    [theme.breakpoints.down('xs')]: {
-      display: 'none',
-    },
-    
   },
   avatar: {
     marginRight: '10px',

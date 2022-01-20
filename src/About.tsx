@@ -218,7 +218,7 @@ const useStyles = (theme: Theme) => createStyles({
   },
   recentWorkTitle: {
     fontFamily: 'Montserrat',
-    color: '#F7F3F2',
+    color: '#12130F',
     fontSize: '2.5rem',
     padding: '2rem',
     cursor: 'default',
