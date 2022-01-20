@@ -31,85 +31,14 @@ import { Theme } from '@material-ui/core';
 
 const About = (props: StyledProps) => {
   const classes = props.classes;
-  const AboutMe = "I am a web developer currently based in the Bay Area who loves to create and collaborate with others in producing user friendly software. When I'm not sitting in front of my desktop, I'm usually making music, jotting down pixels, or hanging out with friends."
-  const ReactItems = [
-    "Experience with Material UI and styling best practices",
-    "Component testing with Jest",
-    "Axios for handling requests / interacting with rest APIs",
-  ];
-  const NodeJSItems = [
-    "Experience with using Express and other frameworks",
-    "Knowledgable in Passport and security best practices",
-    "Proficiency in REST APIs"
-  ];
-  const JavascriptItems = [
-    "Knowledge of jQuery, npm, Webpack",
-    "AJAX for interactions between the web page and the server",
-    "Performance optimization"
-  ];
-  const PythonItems = [
-    "Package-related tools: brew, pip, setuptools",
-    "Experience with popular web frameworks such as Django and Flask",
-    "MySQL, Database integration"
-  ];
   AOS.init();
   return (  
     <Box id="nateshim" className={classes.backgroundContainer}>
       <Navigation/>
-      <Container id="hello" className={classes.section} maxWidth={false}>
-        <WindupChildren>
-          <span className={classes.bigText}>
-            <Pace ms={85}>{"        hello."}</Pace>
-          </span>
-        </WindupChildren>
-      </Container>
+      
+      
 
-      <Box id="about" className={classes.bio}>
-        <Grid
-          container
-          spacing={3}
-          direction="row"
-          justify="center"
-          >
-          <Grid item sm={12} style={{display: 'flex', justifyContent: 'center'}}>
-            <Avatar data-aos="fade-right" data-aos-delay='300' data-aos-duration='1000' src={nateshim} className={classes.avatar}/>
-          </Grid>
-          <Grid item sm={12} style={{display: 'flex', justifyContent: 'center'}}>
-            <Card className={classes.bioCard} raised={true} data-aos="fade-left" data-aos-delay='300' data-aos-duration='1000'>
-                  <Typography variant="subtitle1" className={classes.text}>{AboutMe}</Typography>
-            </Card>
-          </Grid>
-        </Grid>
-      </Box>
-
-      <Box className={classes.recentWork}>
-          <Typography className={classes.recentWorkTitle}>Skills</Typography>
-          <Grid 
-            container
-            spacing={3}
-            >
-            <SkillsCard icon={react} title={"React"}>
-              <SkillsCardContent
-                items={ReactItems}
-              />
-            </SkillsCard>
-            <SkillsCard icon={node} title={"Node.js"}>
-              <SkillsCardContent
-                items={NodeJSItems}
-              />
-            </SkillsCard>
-            <SkillsCard icon={js} title={"Javascript"}>
-              <SkillsCardContent
-                items={JavascriptItems}
-              />
-            </SkillsCard>
-            <SkillsCard icon={python} title={"Python"}>
-              <SkillsCardContent
-                items={PythonItems}
-              />
-            </SkillsCard>
-          </Grid>
-      </Box>
+      
 
       <Box id="projects" className={classes.projects}>
         <Typography className={classes.recentWorkTitle}>Projects</Typography>
@@ -241,7 +170,6 @@ const useStyles = (theme: Theme) => createStyles({
 
   },
   bio: {
-    backgroundColor: '#FEB954',
     padding: '6rem',
   },
   bioCard: {
@@ -286,10 +214,11 @@ const useStyles = (theme: Theme) => createStyles({
     textAlign: 'center',
     display: 'block',
     padding: '4rem',
+    backgroundColor: '#8F8073',
   },
   recentWorkTitle: {
     fontFamily: 'Montserrat',
-    color: '#12130F',
+    color: '#F7F3F2',
     fontSize: '2.5rem',
     padding: '2rem',
     cursor: 'default',
@@ -298,7 +227,7 @@ const useStyles = (theme: Theme) => createStyles({
     },
   },
   projects: {
-    backgroundColor: '#faf6f5',
+    backgroundColor: '#F7F3F2',
     textAlign: 'center',
     display: 'block',
     padding: '4rem',

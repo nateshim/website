@@ -20,7 +20,7 @@ const Navigation = (props: StyledProps) => {
         <Container>
           <Toolbar disableGutters>
             <Container className={classes.logoContainer}>
-              <Avatar alt="Lonely Fox" src={lonelyfox} className={classes.avatar}/>
+              {/* <Avatar alt="Lonely Fox" src={lonelyfox} className={classes.avatar}/> */}
               <ScrollLink 
                 to="nateshim" 
                 activeClass="active" 
@@ -33,7 +33,7 @@ const Navigation = (props: StyledProps) => {
                 </ScrollLink>
             </Container>
           <Box className={classes.navBar}>
-              <ScrollLink 
+              {/* <ScrollLink 
                 to="about" 
                 activeClass="active" 
                 spy={true} 
@@ -43,8 +43,8 @@ const Navigation = (props: StyledProps) => {
                 className={classes.text}
                 >
                   About
-                </ScrollLink>
-                <ScrollLink 
+                </ScrollLink> */}
+                {/* <ScrollLink 
                 to="projects" 
                 activeClass="active" 
                 spy={true} 
@@ -54,7 +54,7 @@ const Navigation = (props: StyledProps) => {
                 className={classes.text}
                 >
                   Projects
-                </ScrollLink>        
+                </ScrollLink>         */}
           </Box>
           </Toolbar>
         </Container>

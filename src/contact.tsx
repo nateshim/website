@@ -33,7 +33,7 @@ const Contact = (props: StyledProps) => {
                 Home
               </ScrollLink>
             </Box>
-            <Box className={classes.contactBox}>
+            {/* <Box className={classes.contactBox}>
               <ScrollLink
                 style={{ cursor: 'pointer' }}
                 to="about"
@@ -46,7 +46,7 @@ const Contact = (props: StyledProps) => {
               >
                 About
               </ScrollLink>
-            </Box>
+            </Box> */}
             <Box className={classes.contactBox}>
               <ScrollLink
                 style={{ cursor: 'pointer' }}

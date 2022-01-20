@@ -23,14 +23,9 @@ const SkillsCard = (props: PropsWithChildren<StyledProps> & SkillsCardProps) => 
             onMouseLeave={() => set({ s: 1 })}
             style={{ display: 'flex', transform: properties.s.interpolate(trans) }}
             >
-                <Card className={classes.card}>
-                    <CardContent>
-                        <img className={classes.icon} src={props.icon} alt="reacticon"/>
-                        <Divider/>
-                        <Typography className={classes.text}>{props.title}</Typography>
-                        {props.children}
-                    </CardContent>
-                </Card>
+                <div className={classes.card}>
+                  <img className={classes.icon} src={props.icon} alt="reacticon"/>
+                </div>
             </animated.div>
       </Grid>
     );
