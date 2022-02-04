@@ -36,20 +36,6 @@ const Contact = (props: StyledProps) => {
             <Box className={classes.contactBox}>
               <ScrollLink
                 style={{ cursor: 'pointer' }}
-                to="about"
-                activeClass="active"
-                spy={true}
-                smooth={true}
-                offset={-150}
-                duration={800}
-                className={classes.text}
-              >
-                About
-              </ScrollLink>
-            </Box>
-            <Box className={classes.contactBox}>
-              <ScrollLink
-                style={{ cursor: 'pointer' }}
                 to="projects"
                 activeClass="active"
                 spy={true}
