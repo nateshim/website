@@ -1,7 +1,5 @@
 import './css/index.css';
 import About from './About';
-import Projects from './projects';
-import Devlog from './devlog';
 import React, { Component } from 'react';
 import { render } from 'react-dom';
 import { BrowserRouter as Router,Route, Switch } from 'react-router-dom';
@@ -19,8 +17,6 @@ class Home extends Component {
           <div>
             <Switch>
               <Route exact path="/" component={About} />
-              <Route exact path="/projects" component={Projects}/>
-              <Route exact path="/devlog" component ={Devlog}/>
             </Switch>
           </div>
         </Router>

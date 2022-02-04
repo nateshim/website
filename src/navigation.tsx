@@ -20,7 +20,6 @@ const Navigation = (props: StyledProps) => {
         <Container>
           <Toolbar disableGutters>
             <Container className={classes.logoContainer}>
-              <Avatar alt="Lonely Fox" src={lonelyfox} className={classes.avatar}/>
               <ScrollLink 
                 to="nateshim" 
                 activeClass="active" 
