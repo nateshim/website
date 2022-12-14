@@ -21,7 +21,7 @@
     "aos": "^3.0.0-beta.6",
     "axios": "^0.19.2",
     "bufferutil": "^4.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jquery-parallax.js": "^1.5.0",
     "mime": "^2.4.6",
     "node": "^17.4.0",
